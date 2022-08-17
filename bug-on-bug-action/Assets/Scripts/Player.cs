@@ -20,12 +20,16 @@ public class Player : MonoBehaviour
     bool isGrounded = false;
     SpriteRenderer sr;
     Rigidbody2D rb;
+    Animator anim;
+    
+    private string currentState;
     int playerHealth = 100;
     // Start is called before the first frame update
     void Start()
     {
         rb = gameObject.GetComponent<Rigidbody2D>();
         sr = gameObject.GetComponent<SpriteRenderer>();
+        anim = gameObject.GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -34,16 +38,29 @@ public class Player : MonoBehaviour
 
         if (Input.GetKey(KeyCode.A)) {
             rb.velocity = new Vector2(-50, rb.velocity.y);
-        }
-        if (Input.GetKey(KeyCode.D)) {
+            if (isGrounded && (!AnimatorIsPlaying() || AnimatorIsPlaying("player_idle")))
+                ChangeAnimationState("player_walk");
+        } else if (Input.GetKey(KeyCode.D)) {
             rb.velocity = new Vector2(50, rb.velocity.y);
+            if (isGrounded && (!AnimatorIsPlaying() || AnimatorIsPlaying("player_idle")))
+                ChangeAnimationState("player_walk");
         }
-
+        
         if (isGrounded) {
-            if (Input.GetKey(KeyCode.W)) {
-                sr.sprite = jumpSprite;
+            if (!AnimatorIsPlaying()) {
+                //anim.SetTrigger("idle");
+                ChangeAnimationState("player_idle");
+            }
+            if (Input.GetKeyDown(KeyCode.W)) {
+               // anim.SetTrigger("jump");
+               ChangeAnimationState("player_jump");
                 rb.velocity = new Vector2(rb.velocity.x, 50);
                 isGrounded = false;
+            }
+        } else {
+            if (!AnimatorIsPlaying()) {
+                //anim.SetTrigger("jump");
+                ChangeAnimationState("player_jump");
             }
         }
 
@@ -58,14 +75,8 @@ public class Player : MonoBehaviour
         isattacking = true;
         switch (attackName) {
             case "Kick":
-                //kick sound effect
-                sr.sprite = attackSprites[0];
+                ChangeAnimationState("player_kick");
                 HitBoxChange(0, 3, 3);
-                yield return new WaitForSeconds(3);
-                if (isGrounded)
-                    sr.sprite = neutralSprite;
-                else
-                    sr.sprite = jumpSprite;
                 break;
         }
         isattacking = false;
@@ -99,5 +110,20 @@ public class Player : MonoBehaviour
             TakeDamage(1, other.gameObject.transform.position);
         }
 
+    }
+
+    bool AnimatorIsPlaying(){
+        return anim.GetCurrentAnimatorStateInfo(0).length > anim.GetCurrentAnimatorStateInfo(0).normalizedTime;
+    }
+
+    bool AnimatorIsPlaying(string stateName){
+        return AnimatorIsPlaying() && anim.GetCurrentAnimatorStateInfo(0).IsName(stateName);
+    }
+
+    void ChangeAnimationState(string newState) {
+        if (currentState == newState) return;
+
+        anim.Play(newState);
+        currentState = newState;
     }
 }

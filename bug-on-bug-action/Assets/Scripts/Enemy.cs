@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class HitHurtBox : MonoBehaviour
+public class Enemy : MonoBehaviour
 {
     // Start is called before the first frame update
     void Start()
@@ -16,8 +16,8 @@ public class HitHurtBox : MonoBehaviour
         
     }
 
-    private void OnTriggerEnter2D(Collider2D other) {
-        if (other.tag == "Enemy")
-            GameObject.Find("Player").GetComponent<Player>().TakeDamage(1);
+    public void TakeDamage(int damage) {
+        //anim
+        //belarhg
     }
 }

@@ -7,17 +7,22 @@ public class LevelLoader : MonoBehaviour
 {
     public Animator transition;
     public float transitionTime = 1;
+    public bool gameOver = false;
 
 
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetMouseButtonDown(0))
+        Debug.Log(gameOver);
+        if ((Input.GetMouseButtonDown(0)) && (!gameOver))
         {
             LoadGameOver();
-        } else if (Input.GetMouseButtonDown(1))
+            gameOver = true;
+        }
+        else if (Input.GetMouseButtonDown(1))
         {
             LoadBack();
+            gameOver = false;
         }
     }
 

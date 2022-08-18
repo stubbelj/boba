@@ -238,7 +238,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 877a4d91c783d344e82095b5771000c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  theButton: {fileID: 1408149820}
 --- !u!1001 &487449074
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -246,6 +245,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 5296486925707053558, guid: b59b8437568e21a43a23e0003b75d6d4, type: 3}
+      propertyPath: gameOver
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8986936965018308427, guid: b59b8437568e21a43a23e0003b75d6d4, type: 3}
       propertyPath: m_SortingOrder
       value: 1
@@ -471,6 +474,17 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1283582919 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5296486925707053558, guid: b59b8437568e21a43a23e0003b75d6d4, type: 3}
+  m_PrefabInstance: {fileID: 487449074}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bb4145bae919b0947bc98581434f7e21, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1408149817
 GameObject:
   m_ObjectHideFlags: 0
@@ -553,7 +567,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1408149820}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1283582919}
+        m_TargetAssemblyTypeName: LevelLoader, Assembly-CSharp
+        m_MethodName: LoadBack
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1408149820
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -574,7 +600,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 42a981be676fae040b01bcb269b12df9, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 48d2561cb4a144340bd77337aae8bad0, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -650,7 +676,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: d16cb724264a4db4a88925f739c94ea7, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 69a66a1851f24d7479b5d207e3997d64, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1

@@ -14,6 +14,7 @@ public class Player : MonoBehaviour
 
     public Sprite jumpSprite;
     public Sprite neutralSprite;
+    public GameObject beeCorpse;
 
 
     bool isattacking = false;
@@ -35,12 +36,15 @@ public class Player : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        Debug.Log(PlayerPrefs.GetInt("deathCount"));
 
         if (Input.GetKey(KeyCode.A)) {
+            sr.flipX = true;
             rb.velocity = new Vector2(-50, rb.velocity.y);
             if (isGrounded && (!AnimatorIsPlaying() || AnimatorIsPlaying("player_idle")))
                 ChangeAnimationState("player_walk");
         } else if (Input.GetKey(KeyCode.D)) {
+            sr.flipX = false;
             rb.velocity = new Vector2(50, rb.velocity.y);
             if (isGrounded && (!AnimatorIsPlaying() || AnimatorIsPlaying("player_idle")))
                 ChangeAnimationState("player_walk");
@@ -89,6 +93,15 @@ public class Player : MonoBehaviour
         float mag = Mathf.Sqrt(Mathf.Pow(source.x, 2) + Mathf.Pow(source.y, 2));
         rb.velocity = new Vector2((source.x / mag) * 50, (source.y / mag) * 50);
         playerHealth -= damage;
+        if (playerHealth <= 0) {
+            Die();
+        }
+    }
+
+    public void Die() {
+        ///needs to be initialized to 0 to avoid ranodm data
+        PlayerPrefs.SetInt("deathCount", PlayerPrefs.GetInt("deathCount") + 1);
+        StartCoroutine(GameObject.Find("Loader").GetComponent<LevelLoader>().LoadLevel(0));
     }
 
     public IEnumerator HitBoxChange(int attackNum, int hitTime, int hurtTime) {
@@ -126,4 +139,5 @@ public class Player : MonoBehaviour
         anim.Play(newState);
         currentState = newState;
     }
+
 }

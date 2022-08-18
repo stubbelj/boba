@@ -31,7 +31,7 @@ public class LevelLoader : MonoBehaviour
         StartCoroutine(LoadLevel(1));
     }
 
-    IEnumerator LoadLevel(int index)
+    public IEnumerator LoadLevel(int index)
     {
         transition.SetTrigger("Start");
 

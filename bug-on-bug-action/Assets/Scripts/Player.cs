@@ -5,19 +5,13 @@ using UnityEngine;
 public class Player : MonoBehaviour
 {
 
-    //hitboxes and hurtboxes - index 0 is hitbox for attack 1, index 1 is hurtbox for attack 1, etc.
-    public GameObject[] attackBoxes;
-    //vectors for hitbox and hurtbox movement - index 0 is hitbox for attack 1, index 1 is hurtbox for attack 1, etc.
-    public Vector2[] attackBoxVectors = {new Vector2(5f, 0), new Vector2(5f, 0)};
-
-    public Sprite[] attackSprites;
-
     public Sprite jumpSprite;
     public Sprite neutralSprite;
     public GameObject beeCorpse;
+    public GameObject dustCloud;
 
 
-    bool isattacking = false;
+    bool isAttacking = false;
     bool isGrounded = false;
     SpriteRenderer sr;
     Rigidbody2D rb;
@@ -36,7 +30,6 @@ public class Player : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Debug.Log(PlayerPrefs.GetInt("deathCount"));
 
         if (Input.GetKey(KeyCode.A)) {
             sr.flipX = true;
@@ -69,21 +62,37 @@ public class Player : MonoBehaviour
         }
 
         //attacks here
-        if (!isattacking) {
+        if (!isAttacking) {
             if (Input.GetKeyDown(KeyCode.I))
                 StartCoroutine(Attack("Kick"));
+        }
+        if (!isAttacking) {
+            if (Input.GetKeyDown(KeyCode.O))
+                StartCoroutine(Attack("Sting"));
+        }
+        if (!isAttacking) {
+            if (Input.GetKeyDown(KeyCode.P))
+                StartCoroutine(Attack("Tongue"));
         }
     }
 
     public IEnumerator Attack(string attackName) {
-        isattacking = true;
+        isAttacking = true;
         switch (attackName) {
             case "Kick":
                 ChangeAnimationState("player_kick");
-                HitBoxChange(0, 3, 3);
+                transform.Find("HitBoxes").transform.Find("KickHitBox").gameObject.SetActive(true);
+                break;
+            case "Sting":
+                ChangeAnimationState("player_sting");
+                transform.Find("HitBoxes").transform.Find("StingHitBox").gameObject.SetActive(true);
+                break;
+            case "Tongue":
+                ChangeAnimationState("player_tongue");
+                transform.Find("HitBoxes").transform.Find("TongueHitBox").gameObject.SetActive(true);
                 break;
         }
-        isattacking = false;
+        isAttacking = false;
         yield return null;
     }
 
@@ -104,20 +113,14 @@ public class Player : MonoBehaviour
         StartCoroutine(GameObject.Find("Loader").GetComponent<LevelLoader>().LoadLevel(0));
     }
 
-    public IEnumerator HitBoxChange(int attackNum, int hitTime, int hurtTime) {
-        GameObject newHitBox = GameObject.Instantiate(attackBoxes[attackNum * 2], gameObject.transform.position, Quaternion.identity);
-        newHitBox.GetComponent<Rigidbody2D>().velocity = attackBoxVectors[attackNum * 2];
-        Destroy(newHitBox, hitTime);
-        GameObject newHurtBox = GameObject.Instantiate(attackBoxes[attackNum * 2 + 1], gameObject.transform.position, Quaternion.identity);
-        newHurtBox.GetComponent<Rigidbody2D>().velocity = attackBoxVectors[attackNum * 2 + 1];
-        Destroy(newHurtBox, hurtTime);
-        yield return new WaitForSeconds(3);
-    }
 
     private void OnCollisionEnter2D(Collision2D other) {
         if (other.gameObject.tag == "Ground") {
+            if (!isGrounded) {
+                GameObject.Instantiate(dustCloud, new Vector2(transform.position.x, transform.position.y + 1), Quaternion.identity);
+            }
             isGrounded = true;
-            if (!isattacking)
+            if (!isAttacking)
                 sr.sprite = neutralSprite;
         } else if (other.gameObject.tag == "Enemy") {
             TakeDamage(1, other.gameObject.transform.position);
@@ -135,6 +138,11 @@ public class Player : MonoBehaviour
 
     void ChangeAnimationState(string newState) {
         if (currentState == newState) return;
+        if (isAttacking) {
+            foreach (Transform hitbox in transform.Find("HitBoxes")) {
+                hitbox.gameObject.SetActive(false);
+            }
+        }
 
         anim.Play(newState);
         currentState = newState;

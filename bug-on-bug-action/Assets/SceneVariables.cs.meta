@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<< HEAD:bug-on-bug-action/Assets/SceneVariables.cs.meta
 guid: f4a5e2541513dde49a0eff549c3107c9
+=======
+guid: 8cfe226b4f1d3c94ba40167d37a86d4a
+>>>>>>> arjun-branch:bug-on-bug-action/Assets/GameOver/AlphaThreshold.cs.meta
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2

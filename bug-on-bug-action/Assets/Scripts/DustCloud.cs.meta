@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<< HEAD:bug-on-bug-action/Assets/Scripts/DustCloud.cs.meta
 guid: f4b85376ca30ff740ad48e40dfb967d0
+=======
+guid: 267e184855bd6834eb2b174cd0eb608c
+>>>>>>> arjun-branch:bug-on-bug-action/Assets/Background/CameraBounds.cs.meta
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2

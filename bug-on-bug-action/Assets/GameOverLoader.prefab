@@ -62,7 +62,7 @@ Canvas:
   m_SortingBucketNormalizedSize: 0
   m_AdditionalShaderChannelsFlag: 0
   m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_TargetDisplay: 0
 --- !u!114 &218688587911868441
 MonoBehaviour:
@@ -113,8 +113,8 @@ CanvasGroup:
   m_GameObject: {fileID: 994133290009096403}
   m_Enabled: 1
   m_Alpha: 1
-  m_Interactable: 1
-  m_BlocksRaycasts: 1
+  m_Interactable: 0
+  m_BlocksRaycasts: 0
   m_IgnoreParentGroups: 0
 --- !u!95 &3269643233072781447
 Animator:
@@ -400,8 +400,8 @@ CanvasGroup:
   m_GameObject: {fileID: 8986936965018308429}
   m_Enabled: 1
   m_Alpha: 0
-  m_Interactable: 1
-  m_BlocksRaycasts: 1
+  m_Interactable: 0
+  m_BlocksRaycasts: 0
   m_IgnoreParentGroups: 0
 --- !u!95 &8986936965018308431
 Animator:
@@ -523,7 +523,7 @@ GameObject:
   - component: {fileID: 8986936966681431305}
   - component: {fileID: 5296486925707053558}
   m_Layer: 0
-  m_Name: Loader
+  m_Name: GameOverLoader
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

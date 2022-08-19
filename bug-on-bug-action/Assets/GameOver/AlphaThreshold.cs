@@ -5,12 +5,12 @@ using UnityEngine.UI;
 
 public class AlphaThreshold : MonoBehaviour
 {
-    public Image theButton;
+    public Image buttonInQuestion;
 
     // Start is called before the first frame update
     void Start()
     {
-        theButton.alphaHitTestMinimumThreshold = 0.5f;
+        buttonInQuestion.alphaHitTestMinimumThreshold = 0.5f;
     }
 
     // Update is called once per frame

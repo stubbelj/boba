@@ -25,6 +25,8 @@ public class Player : MonoBehaviour
         rb = gameObject.GetComponent<Rigidbody2D>();
         sr = gameObject.GetComponent<SpriteRenderer>();
         anim = gameObject.GetComponent<Animator>();
+        
+        rb.velocity = new Vector2(2, 2);
     }
 
     // Update is called once per frame

@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
-    bool isattacking = false;
+    bool takingDamage = false;
+    bool isAttacking = false;
     bool isGrounded = false;
     SpriteRenderer sr;
     Rigidbody2D rb;
@@ -18,6 +19,8 @@ public class Enemy : MonoBehaviour
     void Start()
     {
         anim = gameObject.GetComponent<Animator>();
+        sr = gameObject.GetComponent<SpriteRenderer>();
+        rb = gameObject.GetComponent<Rigidbody2D>();
     }
 
     void Update()
@@ -28,19 +31,45 @@ public class Enemy : MonoBehaviour
     }
 
     public IEnumerator Attack(string attackName) {
-        isattacking = true;
+        isAttacking = true;
         switch (attackName) {
             case "Stomp":
                 ChangeAnimationState("enemy_stomp");
+                transform.Find("HitBoxes").transform.Find("StompHitBox").gameObject.SetActive(true);
+                break;
+            case "Charge":
+                ChangeAnimationState("enemy_charge");
+                transform.Find("HitBoxes").transform.Find("ChargeHitBox").gameObject.SetActive(true);
+                break;
+            case "GroundPound":
+                ChangeAnimationState("enemy_groundpound");
+                transform.Find("HitBoxes").transform.Find("GroundPoundHitBox").gameObject.SetActive(true);
+                break;
+            case "Impale":
+                ChangeAnimationState("enemy_impale");
+                transform.Find("HitBoxes").transform.Find("ImpaleHitBox").gameObject.SetActive(true);
+                break;
+            case "Vulnerable":
+                ChangeAnimationState("enemy_vulnerable");
+                transform.Find("HitBoxes").transform.Find("VulnerableHitBox").gameObject.SetActive(true);
                 break;
         }
-        isattacking = false;
+        isAttacking = false;
         yield return null;
     }
 
     public void TakeDamage(int damage) {
-        //anim
-        //belarhg
+        if (!takingDamage) {
+            StartCoroutine(ChangeColor());
+        }
+    }
+
+    public IEnumerator ChangeColor() {
+        takingDamage = true;
+        sr.color = new Color(1, 0.8f, 0.8f, 1f);
+        yield return new WaitForSeconds(1);
+        sr.color = new Color(1, 1, 1, 1);
+        takingDamage = false;
     }
 
     private void OnCollisionEnter2D(Collision2D other) {
@@ -51,7 +80,12 @@ public class Enemy : MonoBehaviour
     }
 
     void ChangeAnimationState(string newState) {
-        if (currentState == newState) return;
+        if (isAttacking) {
+            foreach (Transform hitbox in transform.Find("HitBoxes")) {
+                hitbox.gameObject.SetActive(false);
+            }
+        }
+
         anim.Play(newState);
         currentState = newState;
     }

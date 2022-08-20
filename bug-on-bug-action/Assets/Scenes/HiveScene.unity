@@ -1840,6 +1840,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0a2c30e7cef5f0f4e9062d15f008032d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  infinite: 0
   cam: {fileID: 519420028}
   effectAmount: 0.75
 --- !u!212 &409688771
@@ -2090,6 +2091,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0a2c30e7cef5f0f4e9062d15f008032d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  infinite: 0
   cam: {fileID: 519420028}
   effectAmount: 0.925
 --- !u!212 &560040022
@@ -2609,11 +2611,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 780279135}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 307f33d3aa5593146b463292e7f7b722, type: 3}
+  m_Script: {fileID: 11500000, guid: d8c0a705e45a7a34883ec315672d1fc2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  jumpSprite: {fileID: 21300000, guid: 493be7db018740747b68acbd391362cf, type: 3}
-  neutralSprite: {fileID: 21300000, guid: c19f6001e584bbb4b9e8dc5e72ff230d, type: 3}
+  jumpSprite: {fileID: 0}
+  neutralSprite: {fileID: 21300000, guid: 8b02aaa802617b2469d332321a9cb52d, type: 3}
   beeCorpse: {fileID: 0}
   dustCloud: {fileID: 3457936307911614780, guid: 30b3ab51054452748a2af77ff9b91812, type: 3}
 --- !u!70 &780279141
@@ -3503,6 +3505,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0a2c30e7cef5f0f4e9062d15f008032d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  infinite: 0
   cam: {fileID: 519420028}
   effectAmount: 0.5
 --- !u!212 &1571832558
@@ -3732,6 +3735,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0a2c30e7cef5f0f4e9062d15f008032d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  infinite: 0
   cam: {fileID: 519420028}
   effectAmount: 0.25
 --- !u!212 &1711535093

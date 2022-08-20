@@ -14,7 +14,7 @@ public class LevelLoader : MonoBehaviour
     void Update()
     {
         Debug.Log(gameOver);
-        if ((Input.GetMouseButtonDown(0)) && (!gameOver))
+        if ((Input.GetKeyDown(KeyCode.Z)) && (!gameOver))
         {
             LoadGameOver();
             gameOver = true;

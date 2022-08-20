@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Parallax : MonoBehaviour
 {
-
+    public bool infinite = false;
     private float start, length, distanceMoved, loop;
     public GameObject cam;
     public float effectAmount;
@@ -23,12 +23,16 @@ public class Parallax : MonoBehaviour
         distanceMoved = cam.transform.position.x * effectAmount;
         transform.position = new Vector3(start + distanceMoved, transform.position.y, transform.position.z);
 
-        if (loop > start + length)
+        if (infinite)
         {
-            start += length;
-        } else if (loop < start - length)
-        {
-            start -= length;
+            if (loop > start + length)
+            {
+                start += length;
+            }
+            else if (loop < start - length)
+            {
+                start -= length;
+            }
         }
     }
 }

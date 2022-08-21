@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
+    public HealthBar health;
     bool takingDamage = false;
     bool isAttacking = false;
     bool isGrounded = false;
@@ -11,6 +12,7 @@ public class Enemy : MonoBehaviour
     Rigidbody2D rb;
     Animator anim;
     System.Random r = new System.Random();
+    public int bossHealth = 100;
 
     private string currentState;
 
@@ -21,10 +23,16 @@ public class Enemy : MonoBehaviour
         anim = gameObject.GetComponent<Animator>();
         sr = gameObject.GetComponent<SpriteRenderer>();
         rb = gameObject.GetComponent<Rigidbody2D>();
+
+        health.totalHealth = bossHealth;
     }
 
     void Update()
     {
+        if (Input.GetKeyDown(KeyCode.Q))
+        {
+            TakeDamage(20);
+        }
         //if (!isattacking) {
         //    StartCoroutine(Attack(attackList[r.Next(attackList.Count)]));
         //}
@@ -59,9 +67,20 @@ public class Enemy : MonoBehaviour
     }
 
     public void TakeDamage(int damage) {
+        health.takeDmg(damage);
+        bossHealth -= damage;
         if (!takingDamage) {
             StartCoroutine(ChangeColor());
         }
+        if (bossHealth <= 0)
+        {
+            Die();
+        }
+    }
+
+    public void Die()
+    {
+        GameObject.Find("Loader").GetComponent<LevelLoader>().LoadGameOver();
     }
 
     public IEnumerator ChangeColor() {

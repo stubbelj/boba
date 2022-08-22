@@ -24,9 +24,8 @@ public class CameraBounds : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        camY = Mathf.Clamp(transform.position.y, yMin + camOrthsize, yMax - camOrthsize);
+       // camY = Mathf.Clamp(transform.position.y, yMin + camOrthsize, yMax - camOrthsize);
         camX = Mathf.Clamp(transform.position.x, xMin + cameraRatio, xMax - cameraRatio);
-        Vector3 newPos = new Vector3(camX, camY, transform.position.z);
-        transform.position = newPos;
+        transform.position = new Vector3(camX, transform.position.y, transform.position.z);
     }
 }

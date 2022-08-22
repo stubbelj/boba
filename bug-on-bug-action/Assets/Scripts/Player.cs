@@ -5,6 +5,7 @@ using UnityEngine;
 public class Player : MonoBehaviour
 {
 
+    public HealthBar health;
     public Sprite jumpSprite;
     public Sprite neutralSprite;
     public GameObject beeCorpse;
@@ -23,7 +24,7 @@ public class Player : MonoBehaviour
     System.Random r = new System.Random();
     
     private string currentState;
-    int playerHealth = 100;
+    int playerHealth = 5;
     // Start is called before the first frame update
     void Start()
     {
@@ -32,7 +33,6 @@ public class Player : MonoBehaviour
         sr = gameObject.GetComponent<SpriteRenderer>();
         anim = gameObject.GetComponent<Animator>();
         
-        rb.velocity = new Vector2(2, 2);
     }
 
     // Update is called once per frame
@@ -107,17 +107,20 @@ public class Player : MonoBehaviour
     public void TakeDamage(int damage, Vector2 source) {
         //anim
         //ui change
+        health.takeDmg(1);
         float mag = Mathf.Sqrt(Mathf.Pow(source.x, 2) + Mathf.Pow(source.y, 2));
         rb.velocity = new Vector2((source.x / mag) * 50, (source.y / mag) * 50);
         playerHealth -= damage;
         if (playerHealth <= 0) {
-            Die();
-            hasDied = true;
+            StartCoroutine(Die());
         }
     }
 
-    public void Die() {
+    public IEnumerator Die() {
+        ChangeAnimationState("player_death");
+        yield return new WaitForSeconds(0.5f);
         if (!hasDied) {
+            hasDied = true;
             PlayerPrefs.SetInt("deathCount", PlayerPrefs.GetInt("deathCount") + 1);
             StartCoroutine(GameObject.Find("Loader").GetComponent<LevelLoader>().LoadLevel(0));
         }
@@ -134,6 +137,8 @@ public class Player : MonoBehaviour
                 sr.sprite = neutralSprite;
         } else if (other.gameObject.tag == "Enemy") {
             TakeDamage(1, other.gameObject.transform.position);
+        } else {
+            Debug.Log(other.gameObject.tag);
         }
 
     }

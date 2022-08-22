@@ -23,18 +23,28 @@ public class LevelLoader : MonoBehaviour
         else if (Input.GetMouseButtonDown(1))
         {
             gameOver = false;
-            LoadBack();
+            LoadGameOver();
         }
     }
 
     public void LoadGameOver()
     {
+        StartCoroutine(LoadLevel(4));
+    }
+
+    public void LoadGame()
+    {
         StartCoroutine(LoadLevel(2));
     }
 
-    public void LoadBack()
+    public void LoadBossScene()
     {
-        StartCoroutine(LoadLevel(1));
+        StartCoroutine(LoadLevel(3));
+    }
+
+    public void LoadMainMenu()
+    {
+        StartCoroutine(LoadLevel(0));
     }
 
     public IEnumerator LoadLevel(int index)

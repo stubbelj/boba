@@ -5,6 +5,8 @@ using UnityEngine.SceneManagement;
 
 public class MainMenuManager : MonoBehaviour
 {
+    public LevelLoader loader;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -18,7 +20,7 @@ public class MainMenuManager : MonoBehaviour
     }
 
     public void StartGame() {
-        SceneManager.LoadScene("HiveScene");
+        loader.LoadGame();
     }
 
     public void Options() {

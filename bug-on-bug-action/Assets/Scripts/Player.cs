@@ -31,10 +31,18 @@ public class Player : MonoBehaviour
     void Start()
     {
         mode = modeList[r.Next(0, 3)];
+        if (SceneVariables.deathCount == 0)
+        {
+            SceneVariables.mode = mode;
+        }
+
+        if (SceneVariables.mode != null)
+        {
+            mode = SceneVariables.mode;
+        }
         rb = gameObject.GetComponent<Rigidbody2D>();
         sr = gameObject.GetComponent<SpriteRenderer>();
         anim = gameObject.GetComponent<Animator>();
-        
     }
 
     // Update is called once per frame
@@ -134,6 +142,7 @@ public class Player : MonoBehaviour
         if (!hasDied) {
             hasDied = true;
             SceneVariables.deathCount++;
+            SceneVariables.mode = null;
             PlayerPrefs.SetInt("deathCount", PlayerPrefs.GetInt("deathCount") + 1);
             loader.LoadGameOver();
         }

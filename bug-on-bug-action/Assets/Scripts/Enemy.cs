@@ -14,11 +14,12 @@ public class Enemy : MonoBehaviour
     Animator anim;
     System.Random r = new System.Random();
 
+    public string currentAttack;
     private string currentState;
     public int enemyHealth = 100;
     private bool hasDied = false;
 
-    List<string> attackList = new List<string>{"GroundPound"};
+    List<string> attackList = new List<string>{"Stomp", "Impale", "GroundPound"};
 
     void Start()
     {
@@ -62,11 +63,13 @@ public class Enemy : MonoBehaviour
         isAttacking = true;
         switch (attackName) {
             case "Stomp":
+                currentAttack = "Stomp";
                 ChangeAnimationState("enemy_stomp");
                 transform.Find("HitBoxes").transform.Find("StompHitBox").gameObject.SetActive(true);
                 yield return new WaitForSeconds(2);
                 break;
             case "Charge":
+                currentAttack = "Charge";
                 sr.color = new Color(1, 0, 0, 1f);
                 ChangeAnimationState("enemy_charge");
                 transform.Find("HitBoxes").transform.Find("ChargeHitBox").gameObject.SetActive(true);
@@ -78,16 +81,19 @@ public class Enemy : MonoBehaviour
                 sr.color = new Color(1, 1, 1, 1);
                 break;
             case "GroundPound":
-                ChangeAnimationState("enemy_groundpound");
+                currentAttack = "GroundPound";
+                ChangeAnimationState("enemy_slam");
                 transform.Find("HitBoxes").transform.Find("GroundPoundHitBox").gameObject.SetActive(true);
                 yield return new WaitForSeconds(1.5f);
                 break;
             case "Impale":
+                currentAttack = "Impale";
                 ChangeAnimationState("enemy_impale");
                 transform.Find("HitBoxes").transform.Find("ImpaleHitBox").gameObject.SetActive(true);
                 yield return new WaitForSeconds(1.7f);
                 break;
             case "Vulnerable":
+                currentAttack = "Vulnerable";
                 ChangeAnimationState("enemy_vulnerable");
                 transform.Find("HitBoxes").transform.Find("VulnerableHitBox").gameObject.SetActive(true);
                 yield return new WaitForSeconds(5);
@@ -109,6 +115,8 @@ public class Enemy : MonoBehaviour
         if (!hasDied) {
             hasDied = true;
             ChangeAnimationState("enemy_death");
+            GameObject.Find("InvisibleColliders").transform.Find("QueenDoor").gameObject.SetActive(false);
+            GameObject.Find("Main Camera").GetComponent<CameraBounds>().mapBounds = GameObject.Find("CameraBoundsWin").GetComponent<BoxCollider2D>();
             yield return new WaitForSeconds(0.5f);
         }
     }

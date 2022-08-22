@@ -18,6 +18,19 @@ public class EnemyHitBox : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other) {
         if (other.tag == "Player")
-            other.gameObject.GetComponent<Player>().TakeDamage(1, GameObject.Find("Enemy").transform.position);
+            switch(GameObject.Find("Player").GetComponent<Player>().currentAttack) {
+                case "Stomp":
+                    other.gameObject.GetComponent<Player>().TakeDamage(34, GameObject.Find("Enemy").transform.position);
+                    break;
+                case "Charge":
+                    other.gameObject.GetComponent<Player>().TakeDamage(50, GameObject.Find("Enemy").transform.position);
+                    break;
+                case "Impale":
+                    other.gameObject.GetComponent<Player>().TakeDamage(90, GameObject.Find("Enemy").transform.position);
+                    break;
+                case "GroundPound":
+                    other.gameObject.GetComponent<Player>().TakeDamage(90, GameObject.Find("Enemy").transform.position);
+                    break;
+            }
     }
 }

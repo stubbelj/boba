@@ -2511,6 +2511,7 @@ MonoBehaviour:
   disableKeyCode: 0
   switchKeyCode: 27
   isPauseMenu: 1
+  canvas: {fileID: 0}
 --- !u!114 &467867053
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3262,6 +3263,17 @@ CanvasGroup:
   m_Interactable: 0
   m_BlocksRaycasts: 0
   m_IgnoreParentGroups: 0
+--- !u!114 &743491410 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5296486925707053558, guid: b59b8437568e21a43a23e0003b75d6d4, type: 3}
+  m_PrefabInstance: {fileID: 2136397546}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2136397547}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bb4145bae919b0947bc98581434f7e21, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &744255926
 GameObject:
   m_ObjectHideFlags: 0
@@ -5298,7 +5310,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: {fileID: 857098902}
-  bossHealth: 100
+  dustCloud: {fileID: 0}
+  enemyHealth: 10
 --- !u!61 &857098906
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -6441,7 +6454,7 @@ MonoBehaviour:
   neutralSprite: {fileID: 21300000, guid: 8b02aaa802617b2469d332321a9cb52d, type: 3}
   beeCorpse: {fileID: 0}
   dustCloud: {fileID: 3457936307911614780, guid: 30b3ab51054452748a2af77ff9b91812, type: 3}
-  playerHealth: 100
+  loader: {fileID: 743491410}
 --- !u!212 &1727450514
 SpriteRenderer:
   m_ObjectHideFlags: 0

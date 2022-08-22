@@ -380,6 +380,7 @@ MonoBehaviour:
   neutralSprite: {fileID: 21300000, guid: 8b02aaa802617b2469d332321a9cb52d, type: 3}
   beeCorpse: {fileID: 0}
   dustCloud: {fileID: 3457936307911614780, guid: 30b3ab51054452748a2af77ff9b91812, type: 3}
+  loader: {fileID: 1953096424}
 --- !u!212 &116753515
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -551,7 +552,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!225 &216008791
 CanvasGroup:
   m_ObjectHideFlags: 0
@@ -3956,6 +3957,17 @@ CanvasGroup:
   m_Interactable: 0
   m_BlocksRaycasts: 0
   m_IgnoreParentGroups: 0
+--- !u!114 &1953096424 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5296486925707053558, guid: b59b8437568e21a43a23e0003b75d6d4, type: 3}
+  m_PrefabInstance: {fileID: 8986936965580865173}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1953096420}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bb4145bae919b0947bc98581434f7e21, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1964114816
 GameObject:
   m_ObjectHideFlags: 0
@@ -4166,7 +4178,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &2059777183
 Transform:
   m_ObjectHideFlags: 0
@@ -4400,7 +4412,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &2100118952
 RectTransform:
   m_ObjectHideFlags: 0
@@ -4820,7 +4832,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8986936966681431310, guid: b59b8437568e21a43a23e0003b75d6d4, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 9135503320528352312, guid: b59b8437568e21a43a23e0003b75d6d4, type: 3}
       propertyPath: m_SizeDelta.x

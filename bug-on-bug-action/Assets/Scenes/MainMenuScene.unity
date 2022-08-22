@@ -621,6 +621,7 @@ GameObject:
   - component: {fileID: 675340390}
   - component: {fileID: 675340389}
   - component: {fileID: 675340391}
+  - component: {fileID: 675340392}
   m_Layer: 5
   m_Name: Credits Popup
   m_TagString: Untagged
@@ -704,6 +705,18 @@ MonoBehaviour:
   switchKeyCode: 0
   isPauseMenu: 0
   canvas: {fileID: 0}
+--- !u!225 &675340392
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 675340387}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
 --- !u!1 &1051386471
 GameObject:
   m_ObjectHideFlags: 0
@@ -1088,6 +1101,7 @@ GameObject:
   - component: {fileID: 1793348877}
   - component: {fileID: 1793348876}
   - component: {fileID: 1793348875}
+  - component: {fileID: 1793348878}
   m_Layer: 5
   m_Name: PauseMenuPopup
   m_TagString: Untagged
@@ -1171,6 +1185,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1793348873}
   m_CullTransparentMesh: 1
+--- !u!225 &1793348878
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1793348873}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
 --- !u!114 &1853701342 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 5296486925707053558, guid: 047349b36bded774583b119b95f94b5c, type: 3}

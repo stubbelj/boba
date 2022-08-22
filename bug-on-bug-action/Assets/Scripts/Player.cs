@@ -10,6 +10,7 @@ public class Player : MonoBehaviour
     public Sprite neutralSprite;
     public GameObject beeCorpse;
     public GameObject dustCloud;
+    public LevelLoader loader;
 
     private string[] modeList = {"", "_mustache", "_star", "_fleur"};
     private string mode = "";
@@ -38,6 +39,7 @@ public class Player : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        Debug.Log(SceneVariables.deathCount);
 
         if (Input.GetKey(KeyCode.A)) {
             sr.flipX = true;
@@ -121,8 +123,9 @@ public class Player : MonoBehaviour
         yield return new WaitForSeconds(0.5f);
         if (!hasDied) {
             hasDied = true;
+            SceneVariables.deathCount++;
             PlayerPrefs.SetInt("deathCount", PlayerPrefs.GetInt("deathCount") + 1);
-            StartCoroutine(GameObject.Find("Loader").GetComponent<LevelLoader>().LoadLevel(0));
+            loader.LoadGameOver();
         }
     }
 

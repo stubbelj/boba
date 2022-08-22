@@ -10,18 +10,24 @@ public class Player : MonoBehaviour
     public GameObject beeCorpse;
     public GameObject dustCloud;
 
+    private string[] modeList = {"", "_mustache", "_star", "_fleur"};
+    private string mode = "";
+
+    private bool hasDied = false;
 
     bool isAttacking = false;
     bool isGrounded = false;
     SpriteRenderer sr;
     Rigidbody2D rb;
     Animator anim;
+    System.Random r = new System.Random();
     
     private string currentState;
     int playerHealth = 100;
     // Start is called before the first frame update
     void Start()
     {
+        mode = modeList[r.Next(0, 3)];
         rb = gameObject.GetComponent<Rigidbody2D>();
         sr = gameObject.GetComponent<SpriteRenderer>();
         anim = gameObject.GetComponent<Animator>();
@@ -36,45 +42,45 @@ public class Player : MonoBehaviour
         if (Input.GetKey(KeyCode.A)) {
             sr.flipX = true;
             rb.velocity = new Vector2(-50, rb.velocity.y);
-            if (isGrounded && (!AnimatorIsPlaying() || AnimatorIsPlaying("player_idle")))
-                ChangeAnimationState("player_walk");
+            if (isGrounded && (!AnimatorIsPlaying() || AnimatorIsPlaying("player_idle" + mode)))
+                ChangeAnimationState("player_walk" + mode);
         } else if (Input.GetKey(KeyCode.D)) {
             sr.flipX = false;
             rb.velocity = new Vector2(50, rb.velocity.y);
-            if (isGrounded && (!AnimatorIsPlaying() || AnimatorIsPlaying("player_idle")))
-                ChangeAnimationState("player_walk");
+            if (isGrounded && (!AnimatorIsPlaying() || AnimatorIsPlaying("player_idle" + mode)))
+                ChangeAnimationState("player_walk" + mode);
         }
         
         if (isGrounded) {
             if (!AnimatorIsPlaying()) {
                 //anim.SetTrigger("idle");
-                ChangeAnimationState("player_idle");
+                ChangeAnimationState("player_idle" + mode);
             }
             if (Input.GetKeyDown(KeyCode.W)) {
                // anim.SetTrigger("jump");
-               ChangeAnimationState("player_jump");
+               ChangeAnimationState("player_jump" + mode);
                 rb.velocity = new Vector2(rb.velocity.x, 50);
                 isGrounded = false;
             }
         } else {
             if (!AnimatorIsPlaying()) {
                 //anim.SetTrigger("jump");
-                ChangeAnimationState("player_jump");
+                ChangeAnimationState("player_jump" + mode);
             }
         }
 
         //attacks here
         if (!isAttacking) {
             if (Input.GetKeyDown(KeyCode.I))
-                StartCoroutine(Attack("Kick"));
+                StartCoroutine(Attack("Kick" + mode));
         }
         if (!isAttacking) {
             if (Input.GetKeyDown(KeyCode.O))
-                StartCoroutine(Attack("Sting"));
+                StartCoroutine(Attack("Sting" + mode));
         }
         if (!isAttacking) {
             if (Input.GetKeyDown(KeyCode.P))
-                StartCoroutine(Attack("Tongue"));
+                StartCoroutine(Attack("Tongue" + mode));
         }
     }
 
@@ -82,15 +88,15 @@ public class Player : MonoBehaviour
         isAttacking = true;
         switch (attackName) {
             case "Kick":
-                ChangeAnimationState("player_kick");
+                ChangeAnimationState("player_kick" + mode);
                 transform.Find("HitBoxes").transform.Find("KickHitBox").gameObject.SetActive(true);
                 break;
             case "Sting":
-                ChangeAnimationState("player_sting");
+                ChangeAnimationState("player_sting" + mode);
                 transform.Find("HitBoxes").transform.Find("StingHitBox").gameObject.SetActive(true);
                 break;
             case "Tongue":
-                ChangeAnimationState("player_tongue");
+                ChangeAnimationState("player_tongue" + mode);
                 transform.Find("HitBoxes").transform.Find("TongueHitBox").gameObject.SetActive(true);
                 break;
         }
@@ -106,13 +112,15 @@ public class Player : MonoBehaviour
         playerHealth -= damage;
         if (playerHealth <= 0) {
             Die();
+            hasDied = true;
         }
     }
 
     public void Die() {
-        ///needs to be initialized to 0 to avoid ranodm data
-        PlayerPrefs.SetInt("deathCount", PlayerPrefs.GetInt("deathCount") + 1);
-        StartCoroutine(GameObject.Find("Loader").GetComponent<LevelLoader>().LoadLevel(0));
+        if (!hasDied) {
+            PlayerPrefs.SetInt("deathCount", PlayerPrefs.GetInt("deathCount") + 1);
+            StartCoroutine(GameObject.Find("Loader").GetComponent<LevelLoader>().LoadLevel(0));
+        }
     }
 
 

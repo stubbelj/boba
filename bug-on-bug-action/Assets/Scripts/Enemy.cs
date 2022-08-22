@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
+    public GameObject dustCloud;
+
     bool takingDamage = false;
     bool isAttacking = false;
     bool isGrounded = false;
@@ -14,7 +16,7 @@ public class Enemy : MonoBehaviour
 
     private string currentState;
 
-    List<string> attackList = new List<string>{"Stomp"};
+    List<string> attackList = new List<string>{"Stomp", "Charge", "GroundPound", "Impale"};
 
     void Start()
     {
@@ -23,11 +25,26 @@ public class Enemy : MonoBehaviour
         rb = gameObject.GetComponent<Rigidbody2D>();
     }
 
+    //GameObject.Instantiate(dustCloud, new Vector2(transform.position.x, transform.position.y + 1), Quaternion.identity);
+
     void Update()
     {
-        //if (!isattacking) {
-        //    StartCoroutine(Attack(attackList[r.Next(attackList.Count)]));
-        //}
+        if (!isAttacking) {
+            if (Mathf.Abs(GameObject.Find("Player").transform.position.x - transform.position.x) <= 20) {
+                rb.velocity = new Vector2(0, 0);
+                if (AnimatorIsPlaying("enemy_walk"))
+                    GameObject.Instantiate(dustCloud, new Vector2(transform.position.x, transform.position.y + 1), Quaternion.identity);
+                StartCoroutine(Attack(attackList[r.Next(attackList.Count)]));
+            } else {
+                if (!AnimatorIsPlaying("enemy_walk")) {
+                    ChangeAnimationState("enemy_walk");
+                }
+                int dir = 1;
+                if (GameObject.Find("Player").transform.position.x - transform.position.x < 1)
+                    dir = -1;
+                rb.velocity = new Vector2(dir * 20, rb.velocity.y);
+            }
+        }
     }
 
     public IEnumerator Attack(string attackName) {
@@ -40,6 +57,10 @@ public class Enemy : MonoBehaviour
             case "Charge":
                 ChangeAnimationState("enemy_charge");
                 transform.Find("HitBoxes").transform.Find("ChargeHitBox").gameObject.SetActive(true);
+                int dir = 1;
+                if (GameObject.Find("Player").transform.position.x - transform.position.x < 1)
+                    dir = -1;
+                rb.velocity = new Vector2(dir * 20, rb.velocity.y);
                 break;
             case "GroundPound":
                 ChangeAnimationState("enemy_groundpound");
@@ -49,10 +70,10 @@ public class Enemy : MonoBehaviour
                 ChangeAnimationState("enemy_impale");
                 transform.Find("HitBoxes").transform.Find("ImpaleHitBox").gameObject.SetActive(true);
                 break;
-            case "Vulnerable":
-                ChangeAnimationState("enemy_vulnerable");
-                transform.Find("HitBoxes").transform.Find("VulnerableHitBox").gameObject.SetActive(true);
-                break;
+            //case "Vulnerable":
+              //  ChangeAnimationState("enemy_vulnerable");
+                //transform.Find("HitBoxes").transform.Find("VulnerableHitBox").gameObject.SetActive(true);
+                //break;
         }
         isAttacking = false;
         yield return null;
@@ -77,6 +98,14 @@ public class Enemy : MonoBehaviour
             TakeDamage(1);
         }
 
+    }
+
+    bool AnimatorIsPlaying(){
+        return anim.GetCurrentAnimatorStateInfo(0).length > anim.GetCurrentAnimatorStateInfo(0).normalizedTime;
+    }
+
+    bool AnimatorIsPlaying(string stateName){
+        return AnimatorIsPlaying() && anim.GetCurrentAnimatorStateInfo(0).IsName(stateName);
     }
 
     void ChangeAnimationState(string newState) {

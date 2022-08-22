@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+<<<<<<<< HEAD:bug-on-bug-action/Assets/SceneVariables.cs.meta
+guid: 11025c8f6ca7e2c4faa92f0068ae5c13
+========
+guid: 267e184855bd6834eb2b174cd0eb608c
+>>>>>>>> arjun-branch:bug-on-bug-action/Assets/Background/CameraBounds.cs.meta
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

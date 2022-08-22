@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="AudioFile" id="{b0e19955-016b-4436-a75c-e2e1b587c16e}">
+		<property name="assetPath">
+			<value>Victory.wav</value>
+		</property>
+		<property name="isStreaming">
+			<value>true</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>48</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>69.818208333333331</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{226965ee-1721-4b77-a10d-7dbf78023680}</destination>
+		</relationship>
+	</object>
+</objects>

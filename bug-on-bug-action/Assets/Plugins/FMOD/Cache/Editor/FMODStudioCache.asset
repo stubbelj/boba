@@ -1,0 +1,622 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-9013009883780213049
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/Swarm Transition
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/Swarm Transition
+  Guid:
+    Data1: 371483953
+    Data2: 1074730555
+    Data3: 49584029
+    Data4: 589477674
+  Banks:
+  - {fileID: -2604244429682116809}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 2500
+--- !u!114 &-8502650533839961631
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/Exit Hive-Respawn
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/Exit Hive-Respawn
+  Guid:
+    Data1: 404172948
+    Data2: 1097431802
+    Data3: -317408337
+    Data4: -1476190538
+  Banks:
+  - {fileID: -2604244429682116809}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 444
+--- !u!114 &-7936290141636575166
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Music/Sassy Ending
+  m_EditorClassIdentifier: 
+  Path: event:/Music/Sassy Ending
+  Guid:
+    Data1: 1361346177
+    Data2: 1337020827
+    Data3: -1084680283
+    Data4: 980449654
+  Banks:
+  - {fileID: -2604244429682116809}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 80000
+--- !u!114 &-3911828096934021905
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master.strings.bank
+  m_EditorClassIdentifier: 
+  Path: ../HiveGrindFmod/Build/Desktop/Master.strings.bank
+  Name: Master.strings
+  StudioPath: bank:/Master.strings
+  lastModified: 637967894321326734
+  FileSizes:
+  - Name: Desktop
+    Value: 1686
+  Exists: 1
+--- !u!114 &-2920961201027552269
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Music/Beetle Fight
+  m_EditorClassIdentifier: 
+  Path: event:/Music/Beetle Fight
+  Guid:
+    Data1: -167033105
+    Data2: 1133061825
+    Data3: 182978969
+    Data4: -746223034
+  Banks:
+  - {fileID: -2604244429682116809}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 0
+  Parameters:
+  - {fileID: -2351024273895784682}
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 41142
+--- !u!114 &-2604244429682116809
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master.bank
+  m_EditorClassIdentifier: 
+  Path: ../HiveGrindFmod/Build/Desktop/Master.bank
+  Name: Master
+  StudioPath: bank:/Master
+  lastModified: 637967894321307978
+  FileSizes:
+  - Name: Desktop
+    Value: 8651424
+  Exists: 1
+--- !u!114 &-2351024273895784682
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Beetle Fight/Death Count
+  m_EditorClassIdentifier: 
+  Name: Death Count
+  StudioPath: 
+  Min: 0
+  Max: 20
+  Default: 0
+  ID:
+    data1: 1445807765
+    data2: 495239348
+  Type: 0
+  IsGlobal: 0
+  Labels: []
+  Exists: 1
+--- !u!114 &-1967062370098323449
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/Player Hover-Fly
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/Player Hover-Fly
+  Guid:
+    Data1: -1000835116
+    Data2: 1272753923
+    Data3: -259681388
+    Data4: 488552686
+  Banks:
+  - {fileID: -2604244429682116809}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 3552
+--- !u!114 &-1135024609356219375
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/Kick-Punch
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/Kick-Punch
+  Guid:
+    Data1: 1664845879
+    Data2: 1289070091
+    Data3: -227853919
+    Data4: 180284205
+  Banks:
+  - {fileID: -2604244429682116809}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 204
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d32cf7c32a3ed8347bac48ef5ed56d82, type: 3}
+  m_Name: FMODStudioCache
+  m_EditorClassIdentifier: 
+  EditorBanks:
+  - {fileID: -3911828096934021905}
+  - {fileID: -2604244429682116809}
+  EditorEvents:
+  - {fileID: -9013009883780213049}
+  - {fileID: -1135024609356219375}
+  - {fileID: 5459748140803633192}
+  - {fileID: 5533566365299506064}
+  - {fileID: 865852913607944645}
+  - {fileID: 3446236608078798993}
+  - {fileID: 1571552515998398275}
+  - {fileID: -7936290141636575166}
+  - {fileID: -8502650533839961631}
+  - {fileID: 2470720095086498282}
+  - {fileID: 2410914264559414627}
+  - {fileID: 7294579683749761919}
+  - {fileID: -1967062370098323449}
+  - {fileID: -2920961201027552269}
+  - {fileID: 2744489418824472220}
+  - {fileID: 8297300376736510150}
+  - {fileID: 7913954735474678460}
+  - {fileID: 2224692031921086318}
+  - {fileID: 8554269020428256325}
+  EditorParameters: []
+  MasterBanks:
+  - {fileID: -2604244429682116809}
+  StringsBanks:
+  - {fileID: -3911828096934021905}
+  cacheTime: 637967894321326734
+  cacheVersion: 131591
+--- !u!114 &865852913607944645
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/Beetle Attack Impale
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/Beetle Attack Impale
+  Guid:
+    Data1: -1636184513
+    Data2: 1322813098
+    Data3: 2101535419
+    Data4: -985078756
+  Banks:
+  - {fileID: -2604244429682116809}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 980
+--- !u!114 &1571552515998398275
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/Beetle Stomp
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/Beetle Stomp
+  Guid:
+    Data1: 863225216
+    Data2: 1114202186
+    Data3: 1695188892
+    Data4: -2131047991
+  Banks:
+  - {fileID: -2604244429682116809}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 1875
+--- !u!114 &2224692031921086318
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/Player Damage
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/Player Damage
+  Guid:
+    Data1: -468329449
+    Data2: 1228135998
+    Data3: 786470809
+    Data4: 621481007
+  Banks:
+  - {fileID: -2604244429682116809}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 250
+--- !u!114 &2410914264559414627
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/Beetle Attack Charge
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/Beetle Attack Charge
+  Guid:
+    Data1: 933073839
+    Data2: 1269391979
+    Data3: 771089066
+    Data4: -478060341
+  Banks:
+  - {fileID: -2604244429682116809}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 1288
+--- !u!114 &2470720095086498282
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Music/Main Title
+  m_EditorClassIdentifier: 
+  Path: event:/Music/Main Title
+  Guid:
+    Data1: -582215763
+    Data2: 1141317755
+    Data3: -691206766
+    Data4: 546213230
+  Banks:
+  - {fileID: -2604244429682116809}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 41453
+--- !u!114 &2744489418824472220
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Music/Victory
+  m_EditorClassIdentifier: 
+  Path: event:/Music/Victory
+  Guid:
+    Data1: -855398665
+    Data2: 1284812860
+    Data3: 1746651567
+    Data4: -255518867
+  Banks:
+  - {fileID: -2604244429682116809}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 69818
+--- !u!114 &3446236608078798993
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/Forest Ambience
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/Forest Ambience
+  Guid:
+    Data1: -956419717
+    Data2: 1342044427
+    Data3: 1128130966
+    Data4: -1965164081
+  Banks:
+  - {fileID: -2604244429682116809}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 131157
+--- !u!114 &5459748140803633192
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/Beetle Flight
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/Beetle Flight
+  Guid:
+    Data1: 648456247
+    Data2: 1302489922
+    Data3: -966977895
+    Data4: 935234398
+  Banks:
+  - {fileID: -2604244429682116809}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 25867
+--- !u!114 &5533566365299506064
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/Stinger (Beetle Shell)
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/Stinger (Beetle Shell)
+  Guid:
+    Data1: -1842906563
+    Data2: 1176339904
+    Data3: 1476182207
+    Data4: 2015960515
+  Banks:
+  - {fileID: -2604244429682116809}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 548
+--- !u!114 &7294579683749761919
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/UI Buttons
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/UI Buttons
+  Guid:
+    Data1: 681175238
+    Data2: 1166412718
+    Data3: 1087021736
+    Data4: 1138118716
+  Banks:
+  - {fileID: -2604244429682116809}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 536
+--- !u!114 &7913954735474678460
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/Lose
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/Lose
+  Guid:
+    Data1: -977718290
+    Data2: 1138219531
+    Data3: -1486663788
+    Data4: -1295336142
+  Banks:
+  - {fileID: -2604244429682116809}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 4500
+--- !u!114 &8297300376736510150
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/Stinger Attack (Flesh)
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/Stinger Attack (Flesh)
+  Guid:
+    Data1: -1502349059
+    Data2: 1251044925
+    Data3: -1076618623
+    Data4: 1745627505
+  Banks:
+  - {fileID: -2604244429682116809}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 500
+--- !u!114 &8554269020428256325
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/Tounge Attack
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/Tounge Attack
+  Guid:
+    Data1: -706911280
+    Data2: 1143902379
+    Data3: -1981223240
+    Data4: -1698537500
+  Banks:
+  - {fileID: -2604244429682116809}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 1128

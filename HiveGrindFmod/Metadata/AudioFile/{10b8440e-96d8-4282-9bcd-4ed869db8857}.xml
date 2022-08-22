@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="AudioFile" id="{10b8440e-96d8-4282-9bcd-4ed869db8857}">
+		<property name="assetPath">
+			<value>Sassy Ending (MX) (Loop).wav</value>
+		</property>
+		<property name="isStreaming">
+			<value>true</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>48</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>80</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{226965ee-1721-4b77-a10d-7dbf78023680}</destination>
+		</relationship>
+	</object>
+</objects>

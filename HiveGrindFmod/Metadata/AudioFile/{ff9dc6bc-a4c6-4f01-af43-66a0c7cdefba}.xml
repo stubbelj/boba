@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="AudioFile" id="{ff9dc6bc-a4c6-4f01-af43-66a0c7cdefba}">
+		<property name="assetPath">
+			<value>Stinger - Beetle Shell.mp3</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>44.0999985</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>0.31346938775510202</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{226965ee-1721-4b77-a10d-7dbf78023680}</destination>
+		</relationship>
+	</object>
+</objects>

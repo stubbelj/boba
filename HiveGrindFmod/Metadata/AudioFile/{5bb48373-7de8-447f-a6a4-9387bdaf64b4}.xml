@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="AudioFile" id="{5bb48373-7de8-447f-a6a4-9387bdaf64b4}">
+		<property name="assetPath">
+			<value>PUNCH_PERCUSSIVE_HEAVY_06.wav</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>96</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>0.18414583333333334</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{226965ee-1721-4b77-a10d-7dbf78023680}</destination>
+		</relationship>
+	</object>
+</objects>

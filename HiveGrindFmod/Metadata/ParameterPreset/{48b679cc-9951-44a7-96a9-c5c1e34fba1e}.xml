@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="ParameterPreset" id="{48b679cc-9951-44a7-96a9-c5c1e34fba1e}">
+		<property name="name">
+			<value>Death Count</value>
+		</property>
+		<relationship name="folder">
+			<destination>{d6341f37-7216-4d2a-9eee-4f3d7f9738fa}</destination>
+		</relationship>
+		<relationship name="parameter">
+			<destination>{15db2c7d-0761-4261-8a7a-8399b1a30926}</destination>
+		</relationship>
+	</object>
+	<object class="GameParameter" id="{15db2c7d-0761-4261-8a7a-8399b1a30926}">
+		<property name="maximum">
+			<value>20</value>
+		</property>
+		<property name="initialValue">
+			<value>0</value>
+		</property>
+	</object>
+</objects>

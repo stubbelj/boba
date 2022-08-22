@@ -7,33 +7,44 @@ public class LevelLoader : MonoBehaviour
 {
     public Animator transition;
     public float transitionTime = 1;
+    // Change to player
+    public Enemy boss;
     public bool gameOver = false;
 
 
     // Update is called once per frame
     void Update()
     {
-      
         if ((Input.GetKeyDown(KeyCode.Z)) && (!gameOver))
         {
-            LoadGameOver();
             gameOver = true;
+            LoadGameOver();
         }
         else if (Input.GetMouseButtonDown(1))
         {
-            LoadBack();
             gameOver = false;
+            LoadGameOver();
         }
     }
 
     public void LoadGameOver()
     {
+        StartCoroutine(LoadLevel(4));
+    }
+
+    public void LoadGame()
+    {
         StartCoroutine(LoadLevel(2));
     }
 
-    public void LoadBack()
+    public void LoadBossScene()
     {
-        StartCoroutine(LoadLevel(1));
+        StartCoroutine(LoadLevel(3));
+    }
+
+    public void LoadMainMenu()
+    {
+        StartCoroutine(LoadLevel(0));
     }
 
     public IEnumerator LoadLevel(int index)

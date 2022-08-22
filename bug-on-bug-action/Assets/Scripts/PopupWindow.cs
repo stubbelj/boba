@@ -11,13 +11,13 @@ public class PopupWindow : MonoBehaviour
     public KeyCode disableKeyCode;
     public KeyCode switchKeyCode;
     public bool isPauseMenu;
+    public GameObject canvas;
 
     // Start is called before the first frame update
     void Start()
     {
         img = GetComponent<Image>();
-        img.enabled = false;
-        isImgOn = false;
+        img.enabled = isImgOn;
     }
 
     // Update is called once per frame
@@ -28,24 +28,32 @@ public class PopupWindow : MonoBehaviour
             if (isImgOn)
             {
                 Disable();
+                if (isPauseMenu && Time.timeScale != 1)
+                {
+                    ResumeGame();
+                }
             }
         } else if (Input.GetKeyDown(enableKeyCode))
         {
             if (!isImgOn)
             {
                 Enable();
+                if (isPauseMenu && Time.timeScale != 0)
+                {
+                    PauseGame();
+                }
             }
         } else if (Input.GetKeyDown(switchKeyCode))
         {
             alternate();
-        }
-
-        if (isImgOn && isPauseMenu)
-        {
-            PauseGame();
-        } else if (!isImgOn && isPauseMenu)
-        {
-            ResumeGame();
+            if (isImgOn && isPauseMenu)
+            {
+                PauseGame();
+            }
+            else if (!isImgOn && isPauseMenu)
+            {
+                ResumeGame();
+            }
         }
     }
 
@@ -68,13 +76,17 @@ public class PopupWindow : MonoBehaviour
         img.enabled = false;
         isImgOn = false;
         img.raycastTarget = false;
+        if (canvas != null)
+        {
+            canvas.SetActive(false);
+        }
     }
 
-    void PauseGame()
+    public void PauseGame()
     {
         Time.timeScale = 0;
     }
-    void ResumeGame()
+    public void ResumeGame()
     {
         Time.timeScale = 1;
     }

@@ -406,9 +406,6 @@ GameObject:
   - component: {fileID: 382406695}
   - component: {fileID: 382406694}
   - component: {fileID: 382406693}
-  - component: {fileID: 382406700}
-  - component: {fileID: 382406699}
-  - component: {fileID: 382406698}
   - component: {fileID: 382406701}
   m_Layer: 5
   m_Name: Canvas
@@ -429,6 +426,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fc69d4f3a2bf1924eb1fbd5792d5858d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  loader: {fileID: 1853701342}
 --- !u!114 &382406694
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -514,45 +512,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
---- !u!114 &382406698
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 382406692}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8cfe226b4f1d3c94ba40167d37a86d4a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  buttonInQuestion: {fileID: 88814390}
---- !u!114 &382406699
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 382406692}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8cfe226b4f1d3c94ba40167d37a86d4a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  buttonInQuestion: {fileID: 1670508378}
---- !u!114 &382406700
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 382406692}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8cfe226b4f1d3c94ba40167d37a86d4a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  buttonInQuestion: {fileID: 1400344725}
 --- !u!225 &382406701
 CanvasGroup:
   m_ObjectHideFlags: 0
@@ -744,6 +703,7 @@ MonoBehaviour:
   disableKeyCode: 27
   switchKeyCode: 0
   isPauseMenu: 0
+  canvas: {fileID: 0}
 --- !u!1 &1051386471
 GameObject:
   m_ObjectHideFlags: 0
@@ -1172,6 +1132,7 @@ MonoBehaviour:
   disableKeyCode: 27
   switchKeyCode: 0
   isPauseMenu: 1
+  canvas: {fileID: 0}
 --- !u!114 &1793348876
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1210,3 +1171,14 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1793348873}
   m_CullTransparentMesh: 1
+--- !u!114 &1853701342 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5296486925707053558, guid: 047349b36bded774583b119b95f94b5c, type: 3}
+  m_PrefabInstance: {fileID: 227321369}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bb4145bae919b0947bc98581434f7e21, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

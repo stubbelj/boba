@@ -15,10 +15,10 @@ public class Enemy : MonoBehaviour
     System.Random r = new System.Random();
 
     private string currentState;
-    public int enemyHealth = 10;
+    public int enemyHealth = 100;
     private bool hasDied = false;
 
-    List<string> attackList = new List<string>{"Impale"};
+    List<string> attackList = new List<string>{"GroundPound"};
 
     void Start()
     {
@@ -97,9 +97,8 @@ public class Enemy : MonoBehaviour
     }
 
     public void TakeDamage(int damage) {
-        Debug.Log("Q");
         health.takeDmg(damage);
-        enemyHealth -= 1;
+        enemyHealth -= damage;
         if (enemyHealth <= 0) {
             StartCoroutine(Die());
         }

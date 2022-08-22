@@ -25,7 +25,7 @@ public class Player : MonoBehaviour
     System.Random r = new System.Random();
     
     private string currentState;
-    int playerHealth = 5;
+    int playerHealth = 100;
     // Start is called before the first frame update
     void Start()
     {
@@ -73,16 +73,16 @@ public class Player : MonoBehaviour
 
         //attacks here
         if (!isAttacking) {
+            if (Input.GetKeyDown(KeyCode.J))
+                StartCoroutine(Attack("Kick"));
+        }
+        if (!isAttacking) {
             if (Input.GetKeyDown(KeyCode.I))
-                StartCoroutine(Attack("Kick" + mode));
+                StartCoroutine(Attack("Sting"));
         }
         if (!isAttacking) {
-            if (Input.GetKeyDown(KeyCode.O))
-                StartCoroutine(Attack("Sting" + mode));
-        }
-        if (!isAttacking) {
-            if (Input.GetKeyDown(KeyCode.P))
-                StartCoroutine(Attack("Tongue" + mode));
+            if (Input.GetKeyDown(KeyCode.L))
+                StartCoroutine(Attack("Tongue"));
         }
     }
 
@@ -109,7 +109,7 @@ public class Player : MonoBehaviour
     public void TakeDamage(int damage, Vector2 source) {
         //anim
         //ui change
-        health.takeDmg(1);
+        health.takeDmg(damage);
         float mag = Mathf.Sqrt(Mathf.Pow(source.x, 2) + Mathf.Pow(source.y, 2));
         rb.velocity = new Vector2((source.x / mag) * 50, (source.y / mag) * 50);
         playerHealth -= damage;

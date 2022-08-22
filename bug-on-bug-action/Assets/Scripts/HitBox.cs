@@ -18,6 +18,16 @@ public class HitBox : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other) {
         if (other.tag == "Enemy")
-            other.gameObject.GetComponent<Enemy>().TakeDamage(1);
+            switch(GameObject.Find("Player").GetComponent<Player>().currentAttack) {
+                case "Kick":
+                    other.gameObject.GetComponent<Enemy>().TakeDamage(1);
+                    break;
+                case "Sting":
+                    other.gameObject.GetComponent<Enemy>().TakeDamage(10);
+                    break;
+                case "Tongue":
+                    other.gameObject.GetComponent<Enemy>().TakeDamage(2);
+                    break;
+            }
     }
 }

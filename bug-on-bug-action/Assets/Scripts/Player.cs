@@ -15,6 +15,7 @@ public class Player : MonoBehaviour
     private string[] modeList = {"", "_mustache", "_star", "_fleur"};
     private string mode = "";
 
+    public string currentAttack;
     private bool hasDied = false;
 
     bool isAttacking = false;
@@ -39,50 +40,54 @@ public class Player : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Debug.Log(SceneVariables.deathCount);
+        if (!hasDied) {
+            Debug.Log(SceneVariables.deathCount);
 
-        if (Input.GetKey(KeyCode.A)) {
-            sr.flipX = true;
-            rb.velocity = new Vector2(-50, rb.velocity.y);
-            if (isGrounded && (!AnimatorIsPlaying() || AnimatorIsPlaying("player_idle" + mode)))
-                ChangeAnimationState("player_walk" + mode);
-        } else if (Input.GetKey(KeyCode.D)) {
-            sr.flipX = false;
-            rb.velocity = new Vector2(50, rb.velocity.y);
-            if (isGrounded && (!AnimatorIsPlaying() || AnimatorIsPlaying("player_idle" + mode)))
-                ChangeAnimationState("player_walk" + mode);
-        }
-        
-        if (isGrounded) {
-            if (!AnimatorIsPlaying()) {
-                //anim.SetTrigger("idle");
-                ChangeAnimationState("player_idle" + mode);
+            if (Input.GetKey(KeyCode.A)) {
+                sr.flipX = true;
+                rb.velocity = new Vector2(-50, rb.velocity.y);
+                if (isGrounded && (!AnimatorIsPlaying() || AnimatorIsPlaying("player_idle" + mode)))
+                    ChangeAnimationState("player_walk" + mode);
             }
-            if (Input.GetKeyDown(KeyCode.W)) {
-               // anim.SetTrigger("jump");
-               ChangeAnimationState("player_jump" + mode);
-                rb.velocity = new Vector2(rb.velocity.x, 50);
-                isGrounded = false;
+            else if (Input.GetKey(KeyCode.D)) {
+                sr.flipX = false;
+                rb.velocity = new Vector2(50, rb.velocity.y);
+                if (isGrounded && (!AnimatorIsPlaying() || AnimatorIsPlaying("player_idle" + mode)))
+                    ChangeAnimationState("player_walk" + mode);
             }
-        } else {
-            if (!AnimatorIsPlaying()) {
-                //anim.SetTrigger("jump");
-                ChangeAnimationState("player_jump" + mode);
-            }
-        }
 
-        //attacks here
-        if (!isAttacking) {
-            if (Input.GetKeyDown(KeyCode.J))
-                StartCoroutine(Attack("Kick"));
-        }
-        if (!isAttacking) {
-            if (Input.GetKeyDown(KeyCode.I))
-                StartCoroutine(Attack("Sting"));
-        }
-        if (!isAttacking) {
-            if (Input.GetKeyDown(KeyCode.L))
-                StartCoroutine(Attack("Tongue"));
+            if (isGrounded) {
+                if (!AnimatorIsPlaying()) {
+                    //anim.SetTrigger("idle");
+                    ChangeAnimationState("player_idle" + mode);
+                }
+                if (Input.GetKeyDown(KeyCode.W)) {
+                    // anim.SetTrigger("jump");
+                    ChangeAnimationState("player_jump" + mode);
+                    rb.velocity = new Vector2(rb.velocity.x, 50);
+                    isGrounded = false;
+                }
+            }
+            else {
+                if (!AnimatorIsPlaying()) {
+                    //anim.SetTrigger("jump");
+                    ChangeAnimationState("player_jump" + mode);
+                }
+            }
+
+            //attacks here
+            if (!isAttacking) {
+                if (Input.GetKeyDown(KeyCode.J))
+                    StartCoroutine(Attack("Kick"));
+            }
+            if (!isAttacking) {
+                if (Input.GetKeyDown(KeyCode.I))
+                    StartCoroutine(Attack("Sting"));
+            }
+            if (!isAttacking) {
+                if (Input.GetKeyDown(KeyCode.L))
+                    StartCoroutine(Attack("Tongue"));
+            }
         }
     }
 
@@ -90,14 +95,19 @@ public class Player : MonoBehaviour
         isAttacking = true;
         switch (attackName) {
             case "Kick":
+                currentAttack = "Kick";
                 ChangeAnimationState("player_kick" + mode);
                 transform.Find("HitBoxes").transform.Find("KickHitBox").gameObject.SetActive(true);
                 break;
             case "Sting":
+                currentAttack = "Sting";
                 ChangeAnimationState("player_sting" + mode);
                 transform.Find("HitBoxes").transform.Find("StingHitBox").gameObject.SetActive(true);
+                yield return new WaitForSeconds(0.3f);
+                TakeDamage(100, transform.position);
                 break;
             case "Tongue":
+                currentAttack = "Tongue";
                 ChangeAnimationState("player_tongue" + mode);
                 transform.Find("HitBoxes").transform.Find("TongueHitBox").gameObject.SetActive(true);
                 break;

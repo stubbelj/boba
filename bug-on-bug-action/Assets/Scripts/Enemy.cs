@@ -31,6 +31,7 @@ public class Enemy : MonoBehaviour
 
     void Update()
     {
+        Debug.Log(enemyHealth);
         if (!isAttacking) {
             if (Mathf.Abs(GameObject.Find("Player").transform.position.x - transform.position.x) <= 25) {
                 rb.velocity = new Vector2(0, 0);

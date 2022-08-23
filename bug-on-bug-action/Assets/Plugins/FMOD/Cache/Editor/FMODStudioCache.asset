@@ -1,5 +1,32 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-9143795597176282129
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/Lick Attack
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/Lick Attack
+  Guid:
+    Data1: 1181748733
+    Data2: 1230173936
+    Data3: -1283610985
+    Data4: -666681499
+  Banks:
+  - {fileID: -2604244429682116809}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 1128
 --- !u!114 &-9013009883780213049
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -96,10 +123,10 @@ MonoBehaviour:
   Path: ../HiveGrindFmod/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 637968012632131948
+  lastModified: 637968142322089904
   FileSizes:
   - Name: Desktop
-    Value: 1686
+    Value: 1696
   Exists: 1
 --- !u!114 &-2920961201027552269
 MonoBehaviour:
@@ -144,10 +171,10 @@ MonoBehaviour:
   Path: ../HiveGrindFmod/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 637968012632121946
+  lastModified: 637968142322063417
   FileSizes:
   - Name: Desktop
-    Value: 8651424
+    Value: 8650976
   Exists: 1
 --- !u!114 &-2351024273895784682
 MonoBehaviour:
@@ -261,13 +288,13 @@ MonoBehaviour:
   - {fileID: 8297300376736510150}
   - {fileID: 7913954735474678460}
   - {fileID: 2224692031921086318}
-  - {fileID: 8554269020428256325}
+  - {fileID: -9143795597176282129}
   EditorParameters: []
   MasterBanks:
   - {fileID: -2604244429682116809}
   StringsBanks:
   - {fileID: -3911828096934021905}
-  cacheTime: 637968012632131948
+  cacheTime: 637968142322089904
   cacheVersion: 131591
 --- !u!114 &865852913607944645
 MonoBehaviour:
@@ -553,10 +580,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Path: event:/SFX/Lose
   Guid:
-    Data1: -977718290
-    Data2: 1138219531
-    Data3: -1486663788
-    Data4: -1295336142
+    Data1: -295578777
+    Data2: 1333605823
+    Data3: -71813233
+    Data4: 1245324059
   Banks:
   - {fileID: -2604244429682116809}
   IsStream: 0
@@ -565,7 +592,7 @@ MonoBehaviour:
   Parameters: []
   MinDistance: 1
   MaxDistance: 20
-  Length: 4500
+  Length: 2323
 --- !u!114 &8297300376736510150
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -593,30 +620,3 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 500
---- !u!114 &8554269020428256325
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/SFX/Tounge Attack
-  m_EditorClassIdentifier: 
-  Path: event:/SFX/Tounge Attack
-  Guid:
-    Data1: -706911280
-    Data2: 1143902379
-    Data3: -1981223240
-    Data4: -1698537500
-  Banks:
-  - {fileID: -2604244429682116809}
-  IsStream: 0
-  Is3D: 0
-  IsOneShot: 1
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 1128

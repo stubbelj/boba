@@ -2810,11 +2810,11 @@ MonoBehaviour:
   CollisionTag: 
   EventReference:
     Guid:
-      Data1: -706911280
-      Data2: 1143902379
-      Data3: -1981223240
-      Data4: -1698537500
-    Path: event:/SFX/Tounge Attack
+      Data1: 1181748733
+      Data2: 1230173936
+      Data3: -1283610985
+      Data4: -666681499
+    Path: event:/SFX/Lick Attack
   Event: 
   PlayEvent: 11
   StopEvent: 12

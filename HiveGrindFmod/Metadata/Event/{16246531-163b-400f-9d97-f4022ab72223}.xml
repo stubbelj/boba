@@ -78,6 +78,9 @@
 		</relationship>
 	</object>
 	<object class="EventMixerMaster" id="{55fbfdee-4514-4e70-97ed-d6658af34804}">
+		<relationship name="modulators">
+			<destination>{fc99796a-9209-4add-ab2b-8c3fcfb9d555}</destination>
+		</relationship>
 		<relationship name="effectChain">
 			<destination>{89b9fa0d-a4a2-47b7-86b0-4c3d17242ebd}</destination>
 		</relationship>
@@ -119,9 +122,6 @@
 		<relationship name="automators">
 			<destination>{fa8d5d27-184d-434e-ac7e-748f20105cf1}</destination>
 		</relationship>
-		<relationship name="modulators">
-			<destination>{dbcf66e8-1b57-4487-a2d4-38432ca46a40}</destination>
-		</relationship>
 		<relationship name="effectChain">
 			<destination>{932679eb-ab8d-4a98-9e2f-038450a78bf6}</destination>
 		</relationship>
@@ -131,6 +131,20 @@
 		<relationship name="output">
 			<destination>{55fbfdee-4514-4e70-97ed-d6658af34804}</destination>
 		</relationship>
+	</object>
+	<object class="ADSRModulator" id="{fc99796a-9209-4add-ab2b-8c3fcfb9d555}">
+		<property name="nameOfPropertyBeingModulated">
+			<value>volume</value>
+		</property>
+		<property name="initialValue">
+			<value>-80</value>
+		</property>
+		<property name="attackTime">
+			<value>596.15387</value>
+		</property>
+		<property name="finalValue">
+			<value>-80</value>
+		</property>
 	</object>
 	<object class="MixerBusEffectChain" id="{89b9fa0d-a4a2-47b7-86b0-4c3d17242ebd}">
 		<relationship name="effects">
@@ -150,17 +164,6 @@
 		<relationship name="automationCurves">
 			<destination>{08114e49-93b6-488f-8daa-043c1e95af53}</destination>
 		</relationship>
-	</object>
-	<object class="ADSRModulator" id="{dbcf66e8-1b57-4487-a2d4-38432ca46a40}">
-		<property name="nameOfPropertyBeingModulated">
-			<value>volume</value>
-		</property>
-		<property name="initialValue">
-			<value>-80</value>
-		</property>
-		<property name="finalValue">
-			<value>-80</value>
-		</property>
 	</object>
 	<object class="MixerBusEffectChain" id="{932679eb-ab8d-4a98-9e2f-038450a78bf6}">
 		<relationship name="effects">
@@ -202,7 +205,7 @@
 			<value>1.8</value>
 		</property>
 		<property name="value">
-			<value>0</value>
+			<value>-19</value>
 		</property>
 	</object>
 	<object class="AutomationPoint" id="{051014d4-264c-4103-8aed-02bf00b9a01b}">

@@ -939,10 +939,10 @@ MonoBehaviour:
   CollisionTag: 
   EventReference:
     Guid:
-      Data1: -977718290
-      Data2: 1138219531
-      Data3: -1486663788
-      Data4: -1295336142
+      Data1: -295578777
+      Data2: 1333605823
+      Data3: -71813233
+      Data4: 1245324059
     Path: event:/SFX/Lose
   Event: 
   PlayEvent: 1

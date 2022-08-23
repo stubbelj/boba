@@ -16,11 +16,14 @@ public class delete : MonoBehaviour
         
     }
 
-    public void OnTriggerEnter2D(Collider2D other)
+    public void destroy()
     {
-        if (other.tag == "Transition")
-        {
-            Debug.Log("reached");
-        }
+        // wait();
+        Destroy(gameObject);
+    }
+
+    private IEnumerator wait()
+    {
+        yield return new WaitForSeconds(0.5F);
     }
 }

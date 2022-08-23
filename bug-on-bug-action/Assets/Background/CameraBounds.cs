@@ -28,4 +28,14 @@ public class CameraBounds : MonoBehaviour
         camX = Mathf.Clamp(transform.position.x, xMin + cameraRatio, xMax - cameraRatio);
         transform.position = new Vector3(camX, camY, transform.position.z);
     }
+
+    public void Reload()
+    {
+        xMin = mapBounds.bounds.min.x;
+        xMax = mapBounds.bounds.max.x;
+        yMin = mapBounds.bounds.min.y;
+        yMax = mapBounds.bounds.max.y;
+        camOrthsize = cam.orthographicSize;
+        cameraRatio = camOrthsize * cam.aspect;
+    }
 }

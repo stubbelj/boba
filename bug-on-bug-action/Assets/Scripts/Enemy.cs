@@ -31,7 +31,7 @@ public class Enemy : MonoBehaviour
         rb = gameObject.GetComponent<Rigidbody2D>();
 
         int temp = SceneVariables.deathCount;
-        
+
         if (temp == 0)
         {
             health.currentHealth = 100;
@@ -39,27 +39,31 @@ public class Enemy : MonoBehaviour
             enemyHealth = (int) health.totalHealth;
             SceneVariables.bossHealth = 0;
         }
+
+        if (temp <= 5 && temp != 0)
+        {
+            GameObject.Find("CorpsePile").GetComponent<SpriteRenderer>().sprite = corpsePileList[temp - 1];
+        }
+        else if (temp == 6)
+        {
+            GameObject.Find("CorpsePile").GetComponent<SpriteRenderer>().sprite = corpsePileList[4];
+        }
+        else if (temp == 7)
+        {
+            GameObject.Find("CorpsePile").GetComponent<SpriteRenderer>().sprite = corpsePileList[5];
+        }
+        else if (temp == 8)
+        {
+            GameObject.Find("CorpsePile").GetComponent<SpriteRenderer>().sprite = corpsePileList[5];
+        }
+        else if (temp == 9)
+        {
+            GameObject.Find("CorpsePile").GetComponent<SpriteRenderer>().sprite = corpsePileList[6];
+        }
         else
         {
-            Debug.Log("reached");
-            StartCoroutine(startDmg());
-        }
-
-        if (temp <= 5 && temp != 0) {
-            GameObject.Find("CorpsePile").GetComponent<SpriteRenderer>().sprite = corpsePileList[temp - 1];
-        } else if (temp == 6) {
-            GameObject.Find("CorpsePile").GetComponent<SpriteRenderer>().sprite = corpsePileList[4];
-        } else if (temp == 7) {
-            GameObject.Find("CorpsePile").GetComponent<SpriteRenderer>().sprite = corpsePileList[5];
-        } else if (temp == 8) {
-            GameObject.Find("CorpsePile").GetComponent<SpriteRenderer>().sprite = corpsePileList[5];
-        } else if (temp == 9) {
-            GameObject.Find("CorpsePile").GetComponent<SpriteRenderer>().sprite = corpsePileList[6];
-        } else {
             GameObject.Find("CorpsePile").GetComponent<SpriteRenderer>().sprite = corpsePileList[7];
         }
-
-    
     }
 
     public IEnumerator startDmg()
@@ -147,7 +151,6 @@ public class Enemy : MonoBehaviour
         health.takeDmg(damage);
         enemyHealth -= damage;
         SceneVariables.bossHealth += damage;
-        Debug.Log(damage);
         if (enemyHealth <= 0) {
             StartCoroutine(Die());
         }
@@ -164,6 +167,8 @@ public class Enemy : MonoBehaviour
             CameraShaker.Instance.ShakeOnce(1f, 1.5f, .1f, .5f);
             GameObject.Find("InvisibleColliders").transform.Find("QueenDoor").gameObject.SetActive(false);
             GameObject.Find("Main Camera").GetComponent<CameraBounds>().mapBounds = GameObject.Find("CameraBoundsWin").GetComponent<BoxCollider2D>();
+            GameObject.Find("Main Camera").GetComponent<CameraBounds>().Reload();
+            GameObject.Find("Main Camera").GetComponent<tempMove>().enabled = true;
             yield return new WaitForSeconds(1f);
             Destroy(gameObject);
         }

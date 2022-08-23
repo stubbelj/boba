@@ -22,10 +22,12 @@ public class QueenBee : MonoBehaviour
         if (other.tag == "Player") {
             if (SceneVariables.deathCount < 10) {
                 anim.Play("queen_talk");
+                GameObject.Find("QueenDialogue").GetComponent<BoxCollider2D>().enabled = true;
                 GameObject.Find("QueenDialogue").GetComponent<SpriteRenderer>().enabled = true;
             }
             else {
                 anim.Play("queen_talk_sassy");
+                GameObject.Find("QueenDialogueSassy").GetComponent<BoxCollider2D>().enabled = true;
                 GameObject.Find("QueenDialogueSassy").GetComponent<SpriteRenderer>().enabled = true;
             }
         }

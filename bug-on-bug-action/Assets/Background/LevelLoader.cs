@@ -47,6 +47,11 @@ public class LevelLoader : MonoBehaviour
         StartCoroutine(LoadLevel(0));
     }
 
+    public void LoadVictoryScreen()
+    {
+        StartCoroutine(LoadLevel(5));
+    }
+
     public IEnumerator LoadLevel(int index)
     {
         transition.SetTrigger("Start");

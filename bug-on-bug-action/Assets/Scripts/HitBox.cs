@@ -23,7 +23,7 @@ public class HitBox : MonoBehaviour
                     other.gameObject.GetComponent<Enemy>().TakeDamage(1);
                     break;
                 case "Sting":
-                    other.gameObject.GetComponent<Enemy>().TakeDamage(10);
+                    other.gameObject.GetComponent<Enemy>().TakeDamage(5);
                     break;
                 case "Tongue":
                     other.gameObject.GetComponent<Enemy>().TakeDamage(2);

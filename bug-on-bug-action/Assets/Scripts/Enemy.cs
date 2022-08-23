@@ -45,19 +45,21 @@ public class Enemy : MonoBehaviour
             StartCoroutine(startDmg());
         }
 
-        if (temp <= 5) {
+        if (temp <= 5 && temp != 0) {
             GameObject.Find("CorpsePile").GetComponent<SpriteRenderer>().sprite = corpsePileList[temp - 1];
         } else if (temp == 6) {
             GameObject.Find("CorpsePile").GetComponent<SpriteRenderer>().sprite = corpsePileList[4];
         } else if (temp == 7) {
-            GameObject.Find("CorpsePile").GetComponent<SpriteRenderer>().sprite = corpsePileList[6];
+            GameObject.Find("CorpsePile").GetComponent<SpriteRenderer>().sprite = corpsePileList[5];
         } else if (temp == 8) {
-            GameObject.Find("CorpsePile").GetComponent<SpriteRenderer>().sprite = corpsePileList[6];
+            GameObject.Find("CorpsePile").GetComponent<SpriteRenderer>().sprite = corpsePileList[5];
         } else if (temp == 9) {
-            GameObject.Find("CorpsePile").GetComponent<SpriteRenderer>().sprite = corpsePileList[8];
+            GameObject.Find("CorpsePile").GetComponent<SpriteRenderer>().sprite = corpsePileList[6];
         } else {
-            GameObject.Find("CorpsePile").GetComponent<SpriteRenderer>().sprite = corpsePileList[9];
+            GameObject.Find("CorpsePile").GetComponent<SpriteRenderer>().sprite = corpsePileList[7];
         }
+
+    
     }
 
     public IEnumerator startDmg()
@@ -107,7 +109,7 @@ public class Enemy : MonoBehaviour
                 break;
             case "Charge":
                 currentAttack = "Charge";
-                sr.color = new Color(1, 0, 0, 1f);
+              
                 ChangeAnimationState("enemy_charge");
                 transform.Find("HitBoxes").transform.Find("ChargeHitBox").gameObject.SetActive(true);
                 int dir = 1;
@@ -115,7 +117,7 @@ public class Enemy : MonoBehaviour
                     dir = -1;
                 rb.velocity = new Vector2(dir * 50, rb.velocity.y);
                 yield return new WaitForSeconds(1.5f);
-                sr.color = new Color(1, 1, 1, 1);
+                
                 break;
             case "GroundPound":
                 currentAttack = "GroundPound";
@@ -162,7 +164,8 @@ public class Enemy : MonoBehaviour
             CameraShaker.Instance.ShakeOnce(1f, 1.5f, .1f, .5f);
             GameObject.Find("InvisibleColliders").transform.Find("QueenDoor").gameObject.SetActive(false);
             GameObject.Find("Main Camera").GetComponent<CameraBounds>().mapBounds = GameObject.Find("CameraBoundsWin").GetComponent<BoxCollider2D>();
-            yield return new WaitForSeconds(0.5f);
+            yield return new WaitForSeconds(1f);
+            Destroy(gameObject);
         }
     }
 

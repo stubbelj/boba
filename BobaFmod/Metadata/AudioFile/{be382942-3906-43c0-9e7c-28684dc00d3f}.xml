@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="AudioFile" id="{be382942-3906-43c0-9e7c-28684dc00d3f}">
+		<property name="assetPath">
+			<value>Swarm.mp3</value>
+		</property>
+		<property name="isStreaming">
+			<value>true</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>24</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>180.98400000000001</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{f4334fbb-4e6c-4795-9a03-e04850bcdbff}</destination>
+		</relationship>
+	</object>
+</objects>

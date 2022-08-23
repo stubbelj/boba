@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="AudioFile" id="{a5259e7f-c6ac-48d7-9877-6b9683e89856}">
+		<property name="assetPath">
+			<value>Beetle Fight Layer 2.wav</value>
+		</property>
+		<property name="isStreaming">
+			<value>true</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>48</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>41.142874999999997</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{f4334fbb-4e6c-4795-9a03-e04850bcdbff}</destination>
+		</relationship>
+	</object>
+</objects>

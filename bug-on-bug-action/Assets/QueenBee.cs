@@ -19,12 +19,15 @@ public class QueenBee : MonoBehaviour
     }
 
     void OnTriggerEnter2D(Collider2D other) {
-        if(SceneVariables.deathCount < 10) {
-            anim.Play("queen_talk");
-            GameObject.Find("QueenDialogue").SetActive(true);
-        } else {
-            anim.Play("queen_talk_sassy");
-            GameObject.Find("QueenDialogueSassy").SetActive(true);
+        if (other.tag == "Player") {
+            if (SceneVariables.deathCount < 10) {
+                anim.Play("queen_talk");
+                GameObject.Find("QueenDialogue").GetComponent<SpriteRenderer>().enabled = true;
+            }
+            else {
+                anim.Play("queen_talk_sassy");
+                GameObject.Find("QueenDialogueSassy").GetComponent<SpriteRenderer>().enabled = true;
+            }
         }
     }
 

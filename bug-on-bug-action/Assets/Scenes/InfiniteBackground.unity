@@ -123,41 +123,6 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!1 &4364702 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 350374584406949181, guid: fcf979f0a46e22d4499db5532d1a236e, type: 3}
-  m_PrefabInstance: {fileID: 350374586472816840}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &4364704
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4364702}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  CollisionTag: 
-  EventReference:
-    Guid:
-      Data1: 1664845879
-      Data2: 1289070091
-      Data3: -227853919
-      Data4: 180284205
-    Path: event:/SFX/Kick-Punch
-  Event: 
-  PlayEvent: 11
-  StopEvent: 12
-  AllowFadeout: 1
-  TriggerOnce: 0
-  Preload: 0
-  Params: []
-  OverrideAttenuation: 0
-  OverrideMinDistance: 1
-  OverrideMaxDistance: 20
 --- !u!1 &7135315
 GameObject:
   m_ObjectHideFlags: 0
@@ -247,7 +212,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8785290}
-  - component: {fileID: 8785289}
+  - component: {fileID: 8785292}
   - component: {fileID: 8785291}
   m_Layer: 0
   m_Name: Audio Source
@@ -256,19 +221,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &8785289
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8785288}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 86c6556701af9e04380698b89f691b6e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  attenuationObject: {fileID: 0}
 --- !u!4 &8785290
 Transform:
   m_ObjectHideFlags: 0
@@ -293,17 +245,30 @@ MonoBehaviour:
   m_GameObject: {fileID: 8785288}
   m_Enabled: 1
   m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 86c6556701af9e04380698b89f691b6e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  attenuationObject: {fileID: 0}
+--- !u!114 &8785292
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8785288}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   CollisionTag: 
   EventReference:
     Guid:
-      Data1: -956419717
-      Data2: 1342044427
-      Data3: 1128130966
-      Data4: -1965164081
-    Path: event:/SFX/Forest Ambience
+      Data1: 1610981937
+      Data2: 1168234428
+      Data3: -1696951656
+      Data4: -1126409471
+    Path: event:/SFX/Ambient forest
   Event: 
   PlayEvent: 1
   StopEvent: 2
@@ -1215,41 +1180,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 7
---- !u!1 &390693494 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 350374585791497172, guid: fcf979f0a46e22d4499db5532d1a236e, type: 3}
-  m_PrefabInstance: {fileID: 350374586472816840}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &390693496
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 390693494}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  CollisionTag: 
-  EventReference:
-    Guid:
-      Data1: -1502349059
-      Data2: 1251044925
-      Data3: -1076618623
-      Data4: 1745627505
-    Path: event:/SFX/Stinger Attack (Flesh)
-  Event: 
-  PlayEvent: 11
-  StopEvent: 0
-  AllowFadeout: 1
-  TriggerOnce: 0
-  Preload: 0
-  Params: []
-  OverrideAttenuation: 0
-  OverrideMinDistance: 1
-  OverrideMaxDistance: 20
 --- !u!1 &407594949 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4465774763290556307, guid: b59b8437568e21a43a23e0003b75d6d4, type: 3}
@@ -2790,41 +2720,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 7
---- !u!1 &1509788613 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 350374586007061724, guid: fcf979f0a46e22d4499db5532d1a236e, type: 3}
-  m_PrefabInstance: {fileID: 350374586472816840}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1509788615
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1509788613}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  CollisionTag: 
-  EventReference:
-    Guid:
-      Data1: 1181748733
-      Data2: 1230173936
-      Data3: -1283610985
-      Data4: -666681499
-    Path: event:/SFX/Lick Attack
-  Event: 
-  PlayEvent: 11
-  StopEvent: 12
-  AllowFadeout: 1
-  TriggerOnce: 0
-  Preload: 0
-  Params: []
-  OverrideAttenuation: 0
-  OverrideMinDistance: 1
-  OverrideMaxDistance: 20
 --- !u!1 &1526836840
 GameObject:
   m_ObjectHideFlags: 0
@@ -4768,6 +4663,111 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fcf979f0a46e22d4499db5532d1a236e, type: 3}
+--- !u!1 &350374586472816841 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 350374586007061724, guid: fcf979f0a46e22d4499db5532d1a236e, type: 3}
+  m_PrefabInstance: {fileID: 350374586472816840}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &350374586472816842 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 350374584406949181, guid: fcf979f0a46e22d4499db5532d1a236e, type: 3}
+  m_PrefabInstance: {fileID: 350374586472816840}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &350374586472816843 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 350374585791497172, guid: fcf979f0a46e22d4499db5532d1a236e, type: 3}
+  m_PrefabInstance: {fileID: 350374586472816840}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &350374586472816844
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 350374586472816841}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: 1697891918
+      Data2: 1153610883
+      Data3: -197648967
+      Data4: -1034728475
+    Path: event:/SFX/Lick
+  Event: 
+  PlayEvent: 11
+  StopEvent: 12
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
+--- !u!114 &350374586472816845
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 350374586472816842}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: -558390938
+      Data2: 1194222591
+      Data3: 873851827
+      Data4: -1838026539
+    Path: event:/SFX/Kick
+  Event: 
+  PlayEvent: 11
+  StopEvent: 12
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
+--- !u!114 &350374586472816846
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 350374586472816843}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: 1705886855
+      Data2: 1227217316
+      Data3: 1702504072
+      Data4: -142708208
+    Path: event:/SFX/Sting
+  Event: 
+  PlayEvent: 11
+  StopEvent: 12
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
 --- !u!1001 &8986936965580865173
 PrefabInstance:
   m_ObjectHideFlags: 0

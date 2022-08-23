@@ -32,13 +32,19 @@ public class Enemy : MonoBehaviour
 
         int temp = SceneVariables.deathCount;
 
+        health.currentHealth = 100;
+        health.totalHealth = 100;
+        enemyHealth = (int)health.totalHealth;
+
         if (temp == 0)
         {
-            health.currentHealth = 100;
-            health.totalHealth = 100;
-            enemyHealth = (int) health.totalHealth;
             SceneVariables.bossHealth = 0;
+        } else
+        {
+            StartCoroutine(startDmg());
         }
+
+
 
         if (temp <= 5 && temp != 0)
         {

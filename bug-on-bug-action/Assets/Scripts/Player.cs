@@ -26,19 +26,19 @@ public class Player : MonoBehaviour
     System.Random r = new System.Random();
     
     private string currentState;
-    int playerHealth = 100;
+    int playerHealth;
     // Start is called before the first frame update
     void Start()
     {
-        mode = modeList[r.Next(0, 3)];
-        if (SceneVariables.deathCount == 0)
-        {
-            SceneVariables.mode = mode;
-        }
+        playerHealth = (int) health.totalHealth;
 
         if (SceneVariables.mode != null)
         {
             mode = SceneVariables.mode;
+        } else
+        {
+            mode = modeList[r.Next(0, 3)];
+            SceneVariables.mode = mode;
         }
         rb = gameObject.GetComponent<Rigidbody2D>();
         sr = gameObject.GetComponent<SpriteRenderer>();
@@ -48,7 +48,6 @@ public class Player : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Debug.Log(SceneVariables.deathCount);
         if (!hasDied) {
             if (Input.GetKey(KeyCode.A)) {
                 sr.flipX = true;

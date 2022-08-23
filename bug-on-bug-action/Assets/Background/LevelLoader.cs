@@ -15,16 +15,6 @@ public class LevelLoader : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if ((Input.GetKeyDown(KeyCode.Z)) && (!gameOver))
-        {
-            gameOver = true;
-            LoadGameOver();
-        }
-        else if (Input.GetMouseButtonDown(1))
-        {
-            gameOver = false;
-            LoadGameOver();
-        }
     }
 
     public void LoadGameOver()

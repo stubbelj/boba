@@ -1929,6 +1929,10 @@ PrefabInstance:
       propertyPath: frontHB
       value: 
       objectReference: {fileID: 376336598}
+    - target: {fileID: 350374586455221414, guid: fcf979f0a46e22d4499db5532d1a236e, type: 3}
+      propertyPath: totalHealth
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 350374586455221423, guid: fcf979f0a46e22d4499db5532d1a236e, type: 3}
       propertyPath: m_Name
       value: Player

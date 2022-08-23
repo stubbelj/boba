@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using EZCameraShake;
 
 public class Enemy : MonoBehaviour
 {
@@ -83,6 +84,7 @@ public class Enemy : MonoBehaviour
             case "GroundPound":
                 currentAttack = "GroundPound";
                 ChangeAnimationState("enemy_slam");
+                CameraShaker.Instance.ShakeOnce(1f, 1.5f, .1f, .5f);
                 transform.Find("HitBoxes").transform.Find("GroundPoundHitBox").gameObject.SetActive(true);
                 yield return new WaitForSeconds(1.5f);
                 break;
@@ -115,6 +117,7 @@ public class Enemy : MonoBehaviour
         if (!hasDied) {
             hasDied = true;
             ChangeAnimationState("enemy_death");
+            CameraShaker.Instance.ShakeOnce(1f, 1.5f, .1f, .5f);
             GameObject.Find("InvisibleColliders").transform.Find("QueenDoor").gameObject.SetActive(false);
             GameObject.Find("Main Camera").GetComponent<CameraBounds>().mapBounds = GameObject.Find("CameraBoundsWin").GetComponent<BoxCollider2D>();
             yield return new WaitForSeconds(0.5f);
@@ -133,7 +136,10 @@ public class Enemy : MonoBehaviour
         if (other.gameObject.tag == "PlayerAttack") {
             TakeDamage(1);
         }
-
+        if (other.gameObject.tag == "Ground")
+        {
+            CameraShaker.Instance.ShakeOnce(.5f, .5f, .1f, .5f);
+        }
     }
 
     bool AnimatorIsPlaying(){

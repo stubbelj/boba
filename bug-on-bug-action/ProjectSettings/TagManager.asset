@@ -6,6 +6,8 @@ TagManager:
   tags:
   - Enemy
   - Ground
+  - Death Zone
+  - Transition
   layers:
   - Default
   - TransparentFX

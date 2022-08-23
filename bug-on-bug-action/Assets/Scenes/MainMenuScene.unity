@@ -405,6 +405,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1666393273008718704, guid: 047349b36bded774583b119b95f94b5c, type: 3}
+      propertyPath: m_TagString
+      value: Transition
+      objectReference: {fileID: 0}
     - target: {fileID: 5296486925707053558, guid: 047349b36bded774583b119b95f94b5c, type: 3}
       propertyPath: transitionTime
       value: 1.5
@@ -473,9 +477,10 @@ GameObject:
   - component: {fileID: 382406694}
   - component: {fileID: 382406693}
   - component: {fileID: 382406701}
+  - component: {fileID: 382406704}
   m_Layer: 5
   m_Name: Canvas
-  m_TagString: Untagged
+  m_TagString: Transition
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -590,6 +595,18 @@ CanvasGroup:
   m_Interactable: 1
   m_BlocksRaycasts: 1
   m_IgnoreParentGroups: 0
+--- !u!114 &382406704
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 382406692}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f074345d99f35ef4fab3eb204a2310c5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &628907267
 GameObject:
   m_ObjectHideFlags: 0

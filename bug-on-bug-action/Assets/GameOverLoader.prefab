@@ -560,4 +560,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   transition: {fileID: 3269643233072781447}
   transitionTime: 1
+  boss: {fileID: 0}
   gameOver: 0

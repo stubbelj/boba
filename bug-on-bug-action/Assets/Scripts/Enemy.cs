@@ -19,7 +19,7 @@ public class Enemy : MonoBehaviour
 
     public string currentAttack;
     private string currentState;
-    public int enemyHealth = 100;
+    private int enemyHealth;
     private bool hasDied = false;
 
     List<string> attackList = new List<string>{"Stomp", "Impale", "GroundPound"};
@@ -31,6 +31,19 @@ public class Enemy : MonoBehaviour
         rb = gameObject.GetComponent<Rigidbody2D>();
 
         int temp = SceneVariables.deathCount;
+        
+        if (temp == 0)
+        {
+            health.currentHealth = 100;
+            health.totalHealth = 100;
+            enemyHealth = (int) health.totalHealth;
+            SceneVariables.bossHealth = 0;
+        }
+        else
+        {
+            Debug.Log("reached");
+            StartCoroutine(startDmg());
+        }
 
         if (temp <= 5) {
             GameObject.Find("CorpsePile").GetComponent<SpriteRenderer>().sprite = corpsePileList[temp - 1];
@@ -47,11 +60,16 @@ public class Enemy : MonoBehaviour
         }
     }
 
+    public IEnumerator startDmg()
+    {
+        yield return new WaitForSeconds(0.1F);
+        TakeDamage(SceneVariables.bossHealth);
+    }
+
     //GameObject.Instantiate(dustCloud, new Vector2(transform.position.x, transform.position.y + 1), Quaternion.identity);
 
     void Update()
     {
-        Debug.Log(enemyHealth);
         if (!isAttacking) {
             if (Mathf.Abs(GameObject.Find("Player").transform.position.x - transform.position.x) <= 25) {
                 rb.velocity = new Vector2(0, 0);
@@ -126,6 +144,8 @@ public class Enemy : MonoBehaviour
     public void TakeDamage(int damage) {
         health.takeDmg(damage);
         enemyHealth -= damage;
+        SceneVariables.bossHealth += damage;
+        Debug.Log(damage);
         if (enemyHealth <= 0) {
             StartCoroutine(Die());
         }

@@ -48,6 +48,7 @@ public class Player : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        Debug.Log(SceneVariables.deathCount);
         if (!hasDied) {
             if (Input.GetKey(KeyCode.A)) {
                 sr.flipX = true;

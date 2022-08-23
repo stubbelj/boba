@@ -83,11 +83,11 @@ public class Enemy : MonoBehaviour
     void Update()
     {
         if (!isAttacking) {
-            if (Mathf.Abs(GameObject.Find("Player").transform.position.x - transform.position.x) <= 25) {
+            if (Mathf.Abs(GameObject.Find("Player").transform.position.x - transform.position.x) <= 35) {
                 rb.velocity = new Vector2(0, 0);
                 if (AnimatorIsPlaying("enemy_walk") || AnimatorIsPlaying("enemy_charge"))
                     GameObject.Instantiate(dustCloud, new Vector2(transform.position.x, transform.position.y + 1), Quaternion.identity);
-                StartCoroutine(Attack(attackList[r.Next(attackList.Count)]));
+                StartCoroutine(Attack(attackList[r.Next(0, attackList.Count)]));
             } else {
                 if (r.Next(0, 4) >= 1) {
                     if (!AnimatorIsPlaying("enemy_walk")) {
@@ -116,6 +116,7 @@ public class Enemy : MonoBehaviour
                 ChangeAnimationState("enemy_stomp");
                 transform.Find("HitBoxes").transform.Find("StompHitBox").gameObject.SetActive(true);
                 yield return new WaitForSeconds(2);
+                CameraShaker.Instance.ShakeOnce(1f, 1.5f, .1f, .5f);
                 break;
             case "Charge":
                 currentAttack = "Charge";
@@ -170,12 +171,12 @@ public class Enemy : MonoBehaviour
                 tmp = "queen_idle_sassy";
             GameObject.Find("QueenBee").GetComponent<QueenBee>().ChangeAnimationState(tmp);
             ChangeAnimationState("enemy_death");
-            CameraShaker.Instance.ShakeOnce(1f, 1.5f, .1f, .5f);
             GameObject.Find("InvisibleColliders").transform.Find("QueenDoor").gameObject.SetActive(false);
             GameObject.Find("Main Camera").GetComponent<CameraBounds>().mapBounds = GameObject.Find("CameraBoundsWin").GetComponent<BoxCollider2D>();
             GameObject.Find("Main Camera").GetComponent<CameraBounds>().Reload();
             GameObject.Find("Main Camera").GetComponent<tempMove>().enabled = true;
             yield return new WaitForSeconds(1f);
+            CameraShaker.Instance.ShakeOnce(1f, 1.5f, .1f, .5f);
             Destroy(gameObject);
         }
     }

@@ -2590,11 +2590,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1284920639734939310, guid: faa9251d60aa20946a6a377f21781c2a, type: 3}
       propertyPath: m_LocalPosition.x
+<<<<<<< Updated upstream
       value: 588.5
       objectReference: {fileID: 0}
     - target: {fileID: 1284920639734939310, guid: faa9251d60aa20946a6a377f21781c2a, type: 3}
       propertyPath: m_LocalPosition.y
       value: 84.3
+=======
+      value: 586.9
+      objectReference: {fileID: 0}
+    - target: {fileID: 1284920639734939310, guid: faa9251d60aa20946a6a377f21781c2a, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 83.8
+>>>>>>> Stashed changes
       objectReference: {fileID: 0}
     - target: {fileID: 1284920639734939310, guid: faa9251d60aa20946a6a377f21781c2a, type: 3}
       propertyPath: m_LocalPosition.z

@@ -17,8 +17,11 @@ public class Enemy : MonoBehaviour
     System.Random r = new System.Random();
     bool canAttack = true;
     public GameObject player;
+<<<<<<< Updated upstream
 
     public Sprite[] corpsePileList;
+=======
+>>>>>>> Stashed changes
 
     public string currentAttack;
     private string currentState;
@@ -33,8 +36,14 @@ public class Enemy : MonoBehaviour
         sr = gameObject.GetComponent<SpriteRenderer>();
         rb = gameObject.GetComponent<Rigidbody2D>();
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 
         temp = SceneVariables.deathCount;
+=======
+         player = GameObject.Find("Player");
+
+        int temp = SceneVariables.deathCount;
+>>>>>>> Stashed changes
 =======
          player = GameObject.Find("Player");
 

@@ -4,10 +4,12 @@ using UnityEngine;
 
 public class EnemyHitBox : MonoBehaviour
 {
+    bool canAttack = true;
+    public GameObject player;
     // Start is called before the first frame update
     void Start()
     {
-        
+        player = GameObject.Find("Player");
     }
 
     // Update is called once per frame
@@ -16,7 +18,9 @@ public class EnemyHitBox : MonoBehaviour
         
     }
 
-    private void OnTriggerEnter2D(Collider2D other) {
+    
+
+   /* private void OnTriggerEnter2D(Collider2D other) {
         if (other.tag == "Player")
             switch(GameObject.Find("Player").GetComponent<Player>().currentAttack) {
                 case "Stomp":
@@ -32,5 +36,5 @@ public class EnemyHitBox : MonoBehaviour
                     other.gameObject.GetComponent<Player>().TakeDamage(90, GameObject.Find("Enemy").transform.position);
                     break;
             }
-    }
+    }*/
 }

@@ -7,6 +7,7 @@ public class Enemy : MonoBehaviour
 {
     public HealthBar health;
     public GameObject dustCloud;
+    public Sprite[] corpsePileList;
 
     bool takingDamage = false;
     bool isAttacking = false;
@@ -14,6 +15,13 @@ public class Enemy : MonoBehaviour
     Rigidbody2D rb;
     Animator anim;
     System.Random r = new System.Random();
+    bool canAttack = true;
+    public GameObject player;
+<<<<<<< Updated upstream
+
+    public Sprite[] corpsePileList;
+=======
+>>>>>>> Stashed changes
 
     public string currentAttack;
     private string currentState;
@@ -27,13 +35,46 @@ public class Enemy : MonoBehaviour
         anim = gameObject.GetComponent<Animator>();
         sr = gameObject.GetComponent<SpriteRenderer>();
         rb = gameObject.GetComponent<Rigidbody2D>();
+<<<<<<< Updated upstream
+<<<<<<< Updated upstream
+
+        temp = SceneVariables.deathCount;
+=======
+         player = GameObject.Find("Player");
+
+        int temp = SceneVariables.deathCount;
+>>>>>>> Stashed changes
+=======
+         player = GameObject.Find("Player");
+
+        int temp = SceneVariables.deathCount;
+>>>>>>> Stashed changes
+
+        if (temp <= 5) {
+            GameObject.Find("CorpsePile").GetComponent<SpriteRenderer>().sprite = corpsePileList[temp - 1];
+        } else if (temp == 6) {
+            GameObject.Find("CorpsePile").GetComponent<SpriteRenderer>().sprite = corpsePileList[4];
+        } else if (temp == 7) {
+            GameObject.Find("CorpsePile").GetComponent<SpriteRenderer>().sprite = corpsePileList[6];
+        } else if (temp == 8) {
+            GameObject.Find("CorpsePile").GetComponent<SpriteRenderer>().sprite = corpsePileList[6];
+        } else if (temp == 9) {
+            GameObject.Find("CorpsePile").GetComponent<SpriteRenderer>().sprite = corpsePileList[8];
+        } else {
+            GameObject.Find("CorpsePile").GetComponent<SpriteRenderer>().sprite = corpsePileList[9];
+        }
     }
 
     //GameObject.Instantiate(dustCloud, new Vector2(transform.position.x, transform.position.y + 1), Quaternion.identity);
 
     void Update()
     {
-        Debug.Log(enemyHealth);
+
+
+        if (Mathf.Abs(GameObject.Find("Player").transform.position.x - transform.position.x) <= 25 && canAttack) {
+            StartCoroutine(Attackin());
+        }
+
         if (!isAttacking) {
             if (Mathf.Abs(GameObject.Find("Player").transform.position.x - transform.position.x) <= 25) {
                 rb.velocity = new Vector2(0, 0);
@@ -71,7 +112,6 @@ public class Enemy : MonoBehaviour
                 break;
             case "Charge":
                 currentAttack = "Charge";
-                sr.color = new Color(1, 0, 0, 1f);
                 ChangeAnimationState("enemy_charge");
                 transform.Find("HitBoxes").transform.Find("ChargeHitBox").gameObject.SetActive(true);
                 int dir = 1;
@@ -79,7 +119,6 @@ public class Enemy : MonoBehaviour
                     dir = -1;
                 rb.velocity = new Vector2(dir * 50, rb.velocity.y);
                 yield return new WaitForSeconds(1.5f);
-                sr.color = new Color(1, 1, 1, 1);
                 break;
             case "GroundPound":
                 currentAttack = "GroundPound";
@@ -103,6 +142,21 @@ public class Enemy : MonoBehaviour
         }
         isAttacking = false;
         yield return null;
+    }
+
+    public IEnumerator Attackin() {
+        canAttack = false;
+        if(GameObject.Find("Enemy").GetComponent<Enemy>().currentAttack == "Stomp") {
+        yield return new WaitForSeconds(0.5f);
+            player.gameObject.GetComponent<Player>().TakeDamage(34, GameObject.Find("Enemy").transform.position);
+        } else if(GameObject.Find("Enemy").GetComponent<Enemy>().currentAttack == "Impale") {
+        yield return new WaitForSeconds(0.5f);
+            player.gameObject.GetComponent<Player>().TakeDamage(34, GameObject.Find("Enemy").transform.position);
+        } else if(GameObject.Find("Enemy").GetComponent<Enemy>().currentAttack == "GroundPound") {
+            yield return new WaitForSeconds(1f);
+            player.gameObject.GetComponent<Player>().TakeDamage(34, GameObject.Find("Enemy").transform.position);
+        }
+        canAttack = true;
     }
 
     public void TakeDamage(int damage) {

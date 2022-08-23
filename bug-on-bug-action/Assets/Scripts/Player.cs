@@ -125,6 +125,7 @@ public class Player : MonoBehaviour
     public void TakeDamage(int damage, Vector2 source) {
         //anim
         //ui change
+        
         health.takeDmg(damage);
         float mag = Mathf.Sqrt(Mathf.Pow(source.x, 2) + Mathf.Pow(source.y, 2));
         rb.velocity = new Vector2((source.x / mag) * 50, (source.y / mag) * 50);

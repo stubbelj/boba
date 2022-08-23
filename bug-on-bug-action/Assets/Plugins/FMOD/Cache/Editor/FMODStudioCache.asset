@@ -15,7 +15,7 @@ MonoBehaviour:
   Path: ../BobaFmod/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 637968159104601167
+  lastModified: 637968535115159499
   FileSizes:
   - Name: Desktop
     Value: 8151040
@@ -89,7 +89,7 @@ MonoBehaviour:
   Path: ../BobaFmod/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 637968159104607557
+  lastModified: 637968535115169501
   FileSizes:
   - Name: Desktop
     Value: 1334
@@ -263,7 +263,7 @@ MonoBehaviour:
   - {fileID: -7580835936687874101}
   StringsBanks:
   - {fileID: -6087679394285323798}
-  cacheTime: 637968159104607557
+  cacheTime: 637968535115169501
   cacheVersion: 131591
 --- !u!114 &2017316445601807276
 MonoBehaviour:

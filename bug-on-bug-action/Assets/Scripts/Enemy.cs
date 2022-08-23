@@ -32,8 +32,8 @@ public class Enemy : MonoBehaviour
 
         int temp = SceneVariables.deathCount;
 
-        health.currentHealth = 100;
-        health.totalHealth = 100;
+        health.currentHealth = 350;
+        health.totalHealth = 350;
         enemyHealth = (int)health.totalHealth;
 
         if (temp == 0)
@@ -85,7 +85,7 @@ public class Enemy : MonoBehaviour
         if (!isAttacking) {
             if (Mathf.Abs(GameObject.Find("Player").transform.position.x - transform.position.x) <= 25) {
                 rb.velocity = new Vector2(0, 0);
-                if (AnimatorIsPlaying("enemy_walk"))
+                if (AnimatorIsPlaying("enemy_walk") || AnimatorIsPlaying("enemy_charge"))
                     GameObject.Instantiate(dustCloud, new Vector2(transform.position.x, transform.position.y + 1), Quaternion.identity);
                 StartCoroutine(Attack(attackList[r.Next(attackList.Count)]));
             } else {

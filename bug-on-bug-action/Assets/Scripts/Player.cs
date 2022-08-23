@@ -87,11 +87,11 @@ public class Player : MonoBehaviour
                     StartCoroutine(Attack("Kick"));
             }
             if (!isAttacking) {
-                if (Input.GetKeyDown(KeyCode.I))
+                if (Input.GetKeyDown(KeyCode.L))
                     StartCoroutine(Attack("Sting"));
             }
             if (!isAttacking) {
-                if (Input.GetKeyDown(KeyCode.L))
+                if (Input.GetKeyDown(KeyCode.I))
                     StartCoroutine(Attack("Tongue"));
             }
         }

@@ -2342,6 +2342,10 @@ PrefabInstance:
       propertyPath: frontHB
       value: 
       objectReference: {fileID: 1964539936}
+    - target: {fileID: 2464181995205839539, guid: aa7dc9eaf07730447a546903b3964772, type: 3}
+      propertyPath: totalHealth
+      value: 350
+      objectReference: {fileID: 0}
     - target: {fileID: 2464181995205839541, guid: aa7dc9eaf07730447a546903b3964772, type: 3}
       propertyPath: m_Name
       value: Enemy
@@ -5272,4 +5276,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 90f97461670b43642926eb54f4102e52, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveValue: 0.05
+  moveValue: 0.25

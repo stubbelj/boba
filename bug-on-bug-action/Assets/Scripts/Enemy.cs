@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
+    public Sprite[] corpsePileList;
+
     public HealthBar health;
     public GameObject dustCloud;
 
@@ -26,6 +28,21 @@ public class Enemy : MonoBehaviour
         anim = gameObject.GetComponent<Animator>();
         sr = gameObject.GetComponent<SpriteRenderer>();
         rb = gameObject.GetComponent<Rigidbody2D>();
+
+        int temp = 0;
+        if (temp <= 5) {
+            GameObject.Find("CorpsePile").GetComponent<SpriteRenderer>().sprite = corpsePileList[temp - 1];
+        } else if (temp == 6) {
+            GameObject.Find("CorpsePile").GetComponent<SpriteRenderer>().sprite = corpsePileList[4];
+        } else if (temp == 7) {
+            GameObject.Find("CorpsePile").GetComponent<SpriteRenderer>().sprite = corpsePileList[6];
+        } else if (temp == 8) {
+            GameObject.Find("CorpsePile").GetComponent<SpriteRenderer>().sprite = corpsePileList[6];
+        } else if (temp == 9) {
+            GameObject.Find("CorpsePile").GetComponent<SpriteRenderer>().sprite = corpsePileList[8];
+        } else {
+            GameObject.Find("CorpsePile").GetComponent<SpriteRenderer>().sprite = corpsePileList[9];
+        }
     }
 
     //GameObject.Instantiate(dustCloud, new Vector2(transform.position.x, transform.position.y + 1), Quaternion.identity);
@@ -65,6 +82,7 @@ public class Enemy : MonoBehaviour
             case "Stomp":
                 currentAttack = "Stomp";
                 ChangeAnimationState("enemy_stomp");
+                GameObject.Instantiate(dustCloud, new Vector2(transform.position.x - 1, transform.position.y), Quaternion.identity);
                 transform.Find("HitBoxes").transform.Find("StompHitBox").gameObject.SetActive(true);
                 yield return new WaitForSeconds(2);
                 break;

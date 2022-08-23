@@ -126,7 +126,7 @@ Transform:
   m_GameObject: {fileID: 2464181995205839541}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 459.2, y: 91.4, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 2.1241415, y: 2.1241415, z: 2.1241415}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 2464181996650187022}
@@ -171,19 +171,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8b44f64920e0078409c05895c3a43578, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  corpsePileList:
-  - {fileID: 21300000, guid: 00484090a0602ea4a99b2b22d2afb831, type: 3}
-  - {fileID: 21300000, guid: afc3bd01a827c8744bfb37c5586452d2, type: 3}
-  - {fileID: 21300000, guid: 49ec72bfb97ba4e449b84c3a222f86fc, type: 3}
-  - {fileID: 21300000, guid: 88b54a88a8e852d428fa26c1d3ae5901, type: 3}
-  - {fileID: 21300000, guid: 9584fdf4dc9e0d140b46bed38560d27a, type: 3}
-  - {fileID: 21300000, guid: 17283e26a6b5cf045b83335514ae004b, type: 3}
-  - {fileID: 21300000, guid: 0da5359fd0d6066438e4e5a2e6ed0d7c, type: 3}
-  - {fileID: 21300000, guid: df25514cc6e765b4da068480099bdba1, type: 3}
   health: {fileID: 2464181995205839539}
   dustCloud: {fileID: 8191147884020455761, guid: cd0589ca94f4ff44696dd163e5847071, type: 3}
   currentAttack: 
-  enemyHealth: 100
+  enemyHealth: 10
 --- !u!212 &2464181995205839543
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -297,7 +288,7 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 1000
+  m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 1

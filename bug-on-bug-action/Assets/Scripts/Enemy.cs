@@ -15,6 +15,8 @@ public class Enemy : MonoBehaviour
     Animator anim;
     System.Random r = new System.Random();
 
+    public Sprite[] corpsePileList;
+
     public string currentAttack;
     private string currentState;
     public int enemyHealth = 100;
@@ -27,6 +29,22 @@ public class Enemy : MonoBehaviour
         anim = gameObject.GetComponent<Animator>();
         sr = gameObject.GetComponent<SpriteRenderer>();
         rb = gameObject.GetComponent<Rigidbody2D>();
+
+        int temp = SceneVariables.deathCount;
+
+        if (temp <= 5) {
+            GameObject.Find("CorpsePile").GetComponent<SpriteRenderer>().sprite = corpsePileList[temp - 1];
+        } else if (temp == 6) {
+            GameObject.Find("CorpsePile").GetComponent<SpriteRenderer>().sprite = corpsePileList[4];
+        } else if (temp == 7) {
+            GameObject.Find("CorpsePile").GetComponent<SpriteRenderer>().sprite = corpsePileList[6];
+        } else if (temp == 8) {
+            GameObject.Find("CorpsePile").GetComponent<SpriteRenderer>().sprite = corpsePileList[6];
+        } else if (temp == 9) {
+            GameObject.Find("CorpsePile").GetComponent<SpriteRenderer>().sprite = corpsePileList[8];
+        } else {
+            GameObject.Find("CorpsePile").GetComponent<SpriteRenderer>().sprite = corpsePileList[9];
+        }
     }
 
     //GameObject.Instantiate(dustCloud, new Vector2(transform.position.x, transform.position.y + 1), Quaternion.identity);
@@ -116,6 +134,10 @@ public class Enemy : MonoBehaviour
     public IEnumerator Die() {
         if (!hasDied) {
             hasDied = true;
+            string tmp = "queen_idle";
+            if (SceneVariables.deathCount >= 10)
+                tmp = "queen_idle_sassy";
+            GameObject.Find("QueenBee").GetComponent<QueenBee>().ChangeAnimationState(tmp);
             ChangeAnimationState("enemy_death");
             CameraShaker.Instance.ShakeOnce(1f, 1.5f, .1f, .5f);
             GameObject.Find("InvisibleColliders").transform.Find("QueenDoor").gameObject.SetActive(false);

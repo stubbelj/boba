@@ -49,8 +49,6 @@ public class Player : MonoBehaviour
     void Update()
     {
         if (!hasDied) {
-            Debug.Log(SceneVariables.deathCount);
-
             if (Input.GetKey(KeyCode.A)) {
                 sr.flipX = true;
                 rb.velocity = new Vector2(-50, rb.velocity.y);
@@ -143,8 +141,15 @@ public class Player : MonoBehaviour
             hasDied = true;
             SceneVariables.deathCount++;
             SceneVariables.mode = null;
-            PlayerPrefs.SetInt("deathCount", PlayerPrefs.GetInt("deathCount") + 1);
             loader.LoadGameOver();
+        }
+    }
+
+    public void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.tag == "Death Zone")
+        {
+            TakeDamage(100, new Vector2(0, 0));
         }
     }
 

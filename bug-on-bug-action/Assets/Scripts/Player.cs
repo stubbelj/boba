@@ -12,7 +12,7 @@ public class Player : MonoBehaviour
     public GameObject dustCloud;
     public LevelLoader loader;
 
-    private string[] modeList = {"", "_mustache", "_star", "_fleur"};
+    private List<string> modeList = new List<string>() { "", "_mustache", "_star", "_fleur", "_brimhat", "_clown", "_sus", "_paint", "_puffs" };
     private string mode = "";
 
     public string currentAttack;
@@ -37,7 +37,7 @@ public class Player : MonoBehaviour
             mode = SceneVariables.mode;
         } else
         {
-            mode = modeList[r.Next(0, 3)];
+            mode = modeList[r.Next(modeList.Count)];
             SceneVariables.mode = mode;
         }
         rb = gameObject.GetComponent<Rigidbody2D>();
@@ -149,7 +149,7 @@ public class Player : MonoBehaviour
     {
         if (other.tag == "Death Zone")
         {
-            TakeDamage(100, new Vector2(0, 0));
+            TakeDamage(100, other.gameObject.transform.position);
         }
     }
 
